@@ -104,4 +104,8 @@ public class MainActivity extends AppCompatActivity
     public void redirectToWeb(View view) {
         instiAppUtil.onClick(view);
     }
+
+    public void downloadFromWeb(final View view) {
+        instiAppUtil.scraper(view, "http://www.iitbbs.ac.in/transportation.php");
+    }
 }
