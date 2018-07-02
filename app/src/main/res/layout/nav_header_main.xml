@@ -21,16 +21,19 @@
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
+        android:id="@+id/nav_header_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="redirectToWeb"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/nav_header_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nav_header_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="redirectToWeb"
         android:text="@string/nav_header_subtitle" />
 
 </LinearLayout>
