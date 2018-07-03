@@ -5,6 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Campus Map" />
+
+        <item
             android:id="@+id/nav_gymkhana"
             android:icon="@drawable/ic_menu_share"
             android:title="Students' Gymkhana" />
@@ -21,6 +26,11 @@
 
     <item android:title="Extras">
         <menu>
+            <item
+                android:id="@+id/nav_messMenu"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Mess Menu" />
+
             <item
                 android:id="@+id/nav_transport"
                 android:icon="@drawable/ic_menu_share"

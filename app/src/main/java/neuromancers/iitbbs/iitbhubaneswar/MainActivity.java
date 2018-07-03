@@ -1,5 +1,7 @@
 package neuromancers.iitbbs.iitbhubaneswar;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -80,8 +82,10 @@ public class MainActivity extends AppCompatActivity
 
         switch(id) {
             case R.id.action_settings:
+                setNavFragment(R.layout.settings);
                 break;
             case R.id.action_about:
+                setNavFragment(R.layout.about);
                 break;
         }
 
@@ -94,11 +98,20 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch(id) {
+            case R.id.nav_map:
+                setNavFragment(R.layout.map_layout);
+                break;
             case R.id.nav_gymkhana:
+                setNavFragment(R.layout.gymkhana);
                 break;
             case R.id.nav_timetable:
+                setNavFragment(R.layout.timetable);
+                break;
+            case R.id.nav_messMenu:
+                setNavFragment(R.layout.mess_menu);
                 break;
             case R.id.nav_transport:
+                setNavFragment(R.layout.transport);
                 break;
         }
 
@@ -114,4 +127,15 @@ public class MainActivity extends AppCompatActivity
 //    public void downloadFromWeb(final View view) {
 //        instiAppUtil.scraper(view, "http://www.iitbbs.ac.in/transportation.php");
 //    }
+
+    private void setNavFragment(int navLayout) {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        NavFragment navFragment = new NavFragment();
+        navFragment.setNewLayout(navLayout);
+
+        fragmentTransaction.replace(R.id.content_frame, navFragment);
+        fragmentTransaction.commit();
+    }
 }
