@@ -41,43 +41,43 @@ public class InstiAppUtil {
         }
     }
 
-    public void scraper(View view, String url) {
-        Document document = null;
-        try {
-            document = Jsoup.connect(url).get();
-        } catch (IOException e) {
-            Toast.makeText(view.getContext(), "Invalid URL For Scraping", Toast.LENGTH_SHORT).show();
-            logger.warning("Invalid URL For Scraping");
-        }
-
-        if (document != null) {
-            Elements anchorTags = document.getElementsByTag("a");
-            for (Element anchorTag : anchorTags) {
-                String href = anchorTag.attr("href");
-                if (href.endsWith(".pdf") || href.endsWith(".xlsx") || href.endsWith(".xls")) {
-                    String file = "http://www.iitbbs.ac.in" + href.substring(2);
-
-                    try {
-                        URL link = new URL(file);
-                        URLConnection urlConnection = link.openConnection();
-
-                        if (href.endsWith(".pdf")) {
-                            PDDocument pdDocument = PDDocument.load(urlConnection.getInputStream());
-                            pdDocument.save(view.getContext().getFilesDir() + href);
-                            pdDocument.close();
-                        } else {
-
-                        }
-                    } catch (MalformedURLException e) {
-                        Toast.makeText(view.getContext(), "Malformed URL While Scraping", Toast.LENGTH_SHORT).show();
-                        logger.warning("Malformed URL While Scraping");
-                    } catch (IOException e) {
-                        Toast.makeText(view.getContext(), "Error Connecting To URL While Scraping", Toast.LENGTH_SHORT).show();
-                        logger.warning("Error Connecting To URL While Scraping");
-                    }
-
-                }
-            }
-        }
-    }
+//    public void scraper(View view, String url) {
+//        Document document = null;
+//        try {
+//            document = Jsoup.connect(url).get();
+//        } catch (IOException e) {
+//            Toast.makeText(view.getContext(), "Invalid URL For Scraping", Toast.LENGTH_SHORT).show();
+//            logger.warning("Invalid URL For Scraping");
+//        }
+//
+//        if (document != null) {
+//            Elements anchorTags = document.getElementsByTag("a");
+//            for (Element anchorTag : anchorTags) {
+//                String href = anchorTag.attr("href");
+//                if (href.endsWith(".pdf") || href.endsWith(".xlsx") || href.endsWith(".xls")) {
+//                    String file = "http://www.iitbbs.ac.in" + href.substring(2);
+//
+//                    try {
+//                        URL link = new URL(file);
+//                        URLConnection urlConnection = link.openConnection();
+//
+//                        if (href.endsWith(".pdf")) {
+//                            PDDocument pdDocument = PDDocument.load(urlConnection.getInputStream());
+//                            pdDocument.save(view.getContext().getFilesDir() + href);
+//                            pdDocument.close();
+//                        } else {
+//
+//                        }
+//                    } catch (MalformedURLException e) {
+//                        Toast.makeText(view.getContext(), "Malformed URL While Scraping", Toast.LENGTH_SHORT).show();
+//                        logger.warning("Malformed URL While Scraping");
+//                    } catch (IOException e) {
+//                        Toast.makeText(view.getContext(), "Error Connecting To URL While Scraping", Toast.LENGTH_SHORT).show();
+//                        logger.warning("Error Connecting To URL While Scraping");
+//                    }
+//
+//                }
+//            }
+//        }
+//    }
 }
