@@ -2,9 +2,16 @@ package neuromancers.iitbbs.iitbhubaneswar;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.Rect;
+import android.graphics.pdf.PdfRenderer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.ParcelFileDescriptor;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -16,18 +23,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
+//import org.apache.pdfbox.pdmodel.PDDocument;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,7 +91,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        switch(id) {
+        switch (id) {
             case R.id.action_settings:
                 setNavFragment(R.layout.settings);
                 break;
@@ -97,7 +108,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        switch(id) {
+        switch (id) {
             case R.id.nav_map:
                 setNavFragment(R.layout.map_layout);
                 break;
@@ -124,9 +135,34 @@ public class MainActivity extends AppCompatActivity
         instiAppUtil.onClick(view);
     }
 
-//    public void downloadFromWeb(final View view) {
-//        instiAppUtil.scraper(view, "http://www.iitbbs.ac.in/transportation.php");
-//    }
+    public void downloadFromWeb(View view) {
+        switch (view.getId()) {
+            case R.id.transport_pdf:
+                String fileName = "transport";
+                String fileExtension = "pdf";
+                String website = "http://www.iitbbs.ac.in/transportation.php";
+
+                ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+                progressBar.setVisibility(View.VISIBLE);
+                IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
+                iitBbsScraping.execute();
+
+
+                break;
+            case R.id.transport_xlsx:
+                //application/vnd.ms-excel
+//                String fileName = "transport";
+//                String fileExtension = "xls";
+//                String website = "http://www.iitbbs.ac.in/transportation.php";
+//
+//                ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+//                progressBar.setVisibility(View.VISIBLE);
+//                IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
+//                iitBbsScraping.execute();
+        }
+    }
+
+
 
     private void setNavFragment(int navLayout) {
         FragmentManager fragmentManager = getFragmentManager();
