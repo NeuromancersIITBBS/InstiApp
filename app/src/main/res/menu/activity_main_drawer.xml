@@ -6,20 +6,25 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_map"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/icon_map"
             android:title="Campus Map" />
 
         <item
             android:id="@+id/nav_gymkhana"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/icon_gymkhana"
             android:title="Students' Gymkhana" />
+
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/icon_calendar"
+            android:title="Calendar" />
     </group>
 
     <item android:title="Academics">
         <menu>
             <item
                 android:id="@+id/nav_timetable"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/icon_time_table"
                 android:title="Time Table" />
         </menu>
     </item>
@@ -28,12 +33,12 @@
         <menu>
             <item
                 android:id="@+id/nav_messMenu"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/icon_mess_menu"
                 android:title="Mess Menu" />
 
             <item
                 android:id="@+id/nav_transport"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/icon_transport"
                 android:title="Transport" />
         </menu>
     </item>
