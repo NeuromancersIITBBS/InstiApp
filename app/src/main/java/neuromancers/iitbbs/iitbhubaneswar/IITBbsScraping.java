@@ -64,12 +64,16 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected Integer doInBackground(Void... voids) {
-        Looper.prepare();
+        if(Looper.myLooper() == null) { // check already Looper is associated or not.
+            Looper.prepare(); // No Looper is defined So define a new one
+        }
 
         file = getFile(fileName + "." + fileExtension);
         if (file.exists()) {
             startFileViewActivity(file, "application/" + fileExtension);
             return Integer.valueOf(1);
+        } else if (website.endsWith(".pdf")) {
+            return Integer.valueOf(downloadFile(website));
         } else {
             return Integer.valueOf(scrape());
         }
@@ -106,33 +110,34 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
             Elements anchorTags = document.getElementsByTag("a");
             for (Element anchorTag : anchorTags) {
                 String href = anchorTag.attr("href");
-                if (href.endsWith(".pdf") || href.endsWith(".xlsx") || href.endsWith(".xls")) {
+                if (href.endsWith(".pdf")) {
                     String fileLink = "http://www.iitbbs.ac.in" + href.substring(2);
 
-                    try {
-                        URL link = new URL(fileLink);
-                        URLConnection urlConnection = link.openConnection();
-
-                        if (href.endsWith(fileExtension) && fileExtension.equals("pdf")) {
-                            PDDocument pdDocument = PDDocument.load(urlConnection.getInputStream());
-                            FileOutputStream outputStream = new FileOutputStream(file);
-                            pdDocument.save(outputStream);
-                            pdDocument.close();
-                            return 0;
-                        } else {
-
-                        }
-                    } catch (MalformedURLException e) {
-                        Toast.makeText(context, "Malformed URL While Scraping", Toast.LENGTH_SHORT).show();
-                        logger.warning("Malformed URL While Scraping");
-                    } catch (IOException e) {
-                        Toast.makeText(context, "Error Connecting To URL While Scraping", Toast.LENGTH_SHORT).show();
-                        logger.warning("Error Connecting To URL While Scraping: " + e.getMessage());
-                    }
+                    return downloadFile(fileLink);
                 }
             }
         }
 
+        return -1;
+    }
+
+    private int downloadFile(String fileLink) {
+        try {
+            URL link = new URL(fileLink);
+            URLConnection urlConnection = link.openConnection();
+
+            PDDocument pdDocument = PDDocument.load(urlConnection.getInputStream());
+            FileOutputStream outputStream = new FileOutputStream(file);
+            pdDocument.save(outputStream);
+            pdDocument.close();
+            return 0;
+        } catch (MalformedURLException e) {
+            Toast.makeText(context, "Malformed URL While Scraping", Toast.LENGTH_SHORT).show();
+            logger.warning("Malformed URL While Scraping");
+        } catch (IOException e) {
+            Toast.makeText(context, "Error Connecting To URL While Scraping", Toast.LENGTH_SHORT).show();
+            logger.warning("Error Connecting To URL While Scraping: " + e.getMessage());
+        }
         return -1;
     }
 }

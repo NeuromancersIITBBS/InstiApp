@@ -129,17 +129,17 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void downloadFromWeb(View view) {
+        String fileName = "";
+        String fileExtension = "";
+        String website = "";
+
         switch (view.getId()) {
             case R.id.transport_pdf:
-                String fileName = "transport";
-                String fileExtension = "pdf";
-                String website = "http://www.iitbbs.ac.in/transportation.php";
-
-                IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
-                iitBbsScraping.execute();
-
+                fileName = "transport_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/transportation.php";
                 break;
-            case R.id.transport_xlsx:
+            case R.id.transport_xls:
                 //application/vnd.ms-excel
 //                String fileName = "transport";
 //                String fileExtension = "xls";
@@ -149,7 +149,46 @@ public class MainActivity extends AppCompatActivity
 //                progressBar.setVisibility(View.VISIBLE);
 //                IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
 //                iitBbsScraping.execute();
+                break;
+            case R.id.timetable_freshers_pdf:
+                fileName = "timetable_freshers_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/1st-Year-B.Tech-n-Dual.pdf";
+                break;
+            case R.id.timetable_sbs_pdf:
+                fileName = "timetable_sbs_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/SBS.pdf";
+                break;
+            case R.id.timetable_seocs_pdf:
+                fileName = "timetable_seocs_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/SEOCS_TT.pdf";
+                break;
+            case R.id.timetable_ses_pdf:
+                fileName = "timetable_ses_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/SES_TT.pdf";
+                break;
+            case R.id.timetable_sif_pdf:
+                fileName = "timetable_sif_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/SIF_TT.pdf";
+                break;
+            case R.id.timetable_smmme_pdf:
+                fileName = "timetable_smmme_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/SMMME_TT.pdf";
+                break;
+            case R.id.timetable_sms_pdf:
+                fileName = "timetable_sms_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/SMS_TT.pdf";
+                break;
         }
+
+        IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
+        iitBbsScraping.execute();
     }
 
 

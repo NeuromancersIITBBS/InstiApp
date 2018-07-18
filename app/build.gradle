@@ -42,4 +42,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
     implementation 'org.jsoup:jsoup:1.11.1'
     implementation 'com.tom_roush:pdfbox-android:1.8.10.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
 }
