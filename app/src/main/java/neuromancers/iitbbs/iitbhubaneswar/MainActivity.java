@@ -2,6 +2,8 @@ package neuromancers.iitbbs.iitbhubaneswar;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.NavigationView;
@@ -201,12 +203,20 @@ public class MainActivity extends AppCompatActivity
                 website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Spring.pdf";
                 break;
         }
-
         IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
         iitBbsScraping.execute();
     }
 
-
+    public void composeMail(View view) {
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_EMAIL, "secyprogsoc.sg@iitbbs.ac.in");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding Institute App");
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
+    }
 
     private void setNavFragment(int navLayout) {
         FragmentManager fragmentManager = getFragmentManager();

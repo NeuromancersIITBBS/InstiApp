@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Developed by Neuromancers, IIT Bhubaneswar. For any complaints and suggestions email us by clicking the button below."  />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Developed by Neuromancers, IIT Bhubaneswar" />
+        <ImageButton
+            android:id="@+id/compose_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="composeMail"
+            android:src="@drawable/icon_mail" />
+    </LinearLayout>>
 </RelativeLayout>
