@@ -16,13 +16,13 @@
         android:text="Academic Calendar" />
 
     <Button
-        android:id="@+id/acad_calendar_autumn_pdf"
+        android:id="@+id/monthly_autumn_pdf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="downloadFromWeb"
         android:text="Monthly Autumn" />
         <Button
-            android:id="@+id/acad_calendar_spring_pdf"
+            android:id="@+id/monthly_spring_pdf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="downloadFromWeb"

@@ -190,13 +190,13 @@ public class MainActivity extends AppCompatActivity
                 fileExtension = "pdf";
                 website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19.pdf";
                 break;
-            case R.id.acad_calendar_autumn_pdf:
-                fileName = "acad_calendar_autumn_pdf";
+            case R.id.monthly_autumn_pdf:
+                fileName = "monthly_autumn_pdf";
                 fileExtension = "pdf";
                 website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Autumn.pdf";
                 break;
-            case R.id.acad_calendar_spring_pdf:
-                fileName = "acad_calendar_spring_pdf";
+            case R.id.monthly_spring_pdf:
+                fileName = "monthly_spring_pdf";
                 fileExtension = "pdf";
                 website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Spring.pdf";
                 break;
