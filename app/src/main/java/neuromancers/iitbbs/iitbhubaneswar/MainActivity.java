@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity
                 fileExtension = "pdf";
                 website = "http://www.iitbbs.ac.in/transportation.php";
                 break;
-            case R.id.transport_xls:
+            //case R.id.transport_xls:
                 //application/vnd.ms-excel
 //                String fileName = "transport";
 //                String fileExtension = "xls";
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity
 //                progressBar.setVisibility(View.VISIBLE);
 //                IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
 //                iitBbsScraping.execute();
-                break;
+            //    break;
             case R.id.timetable_freshers_pdf:
                 fileName = "timetable_freshers_pdf";
                 fileExtension = "pdf";
@@ -184,6 +184,21 @@ public class MainActivity extends AppCompatActivity
                 fileName = "timetable_sms_pdf";
                 fileExtension = "pdf";
                 website = "http://www.iitbbs.ac.in/curriculum_doc/SMS_TT.pdf";
+                break;
+            case R.id.acad_calendar_pdf:
+                fileName = "acad_calendar_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19.pdf";
+                break;
+            case R.id.monthly_autumn_pdf:
+                fileName = "monthly_autumn_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Autumn.pdf";
+                break;
+            case R.id.monthly_spring_pdf:
+                fileName = "monthly_spring_pdf";
+                fileExtension = "pdf";
+                website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Spring.pdf";
                 break;
         }
 
