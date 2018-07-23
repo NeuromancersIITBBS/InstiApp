@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.action_settings:
-                setNavFragment(R.layout.settings);
-                break;
+//            case R.id.action_settings:
+//                setNavFragment(R.layout.settings);
+//                break;
             case R.id.action_about:
                 setNavFragment(R.layout.about);
                 break;
@@ -93,10 +93,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.nav_map:
-                setTitle("Campus Map");
-                setNavFragment(R.layout.map_layout);
-                break;
+//            case R.id.nav_map:
+//                setTitle("Campus Map");
+//                setNavFragment(R.layout.map_layout);
+//                break;
             case R.id.nav_gymkhana:
                 setTitle("Students' Gymkhana");
                 setNavFragment(R.layout.gymkhana);
@@ -109,10 +109,10 @@ public class MainActivity extends AppCompatActivity
                 setTitle("Academic Calendar");
                 setNavFragment(R.layout.calendar);
                 break;
-            case R.id.nav_messMenu:
-                setTitle("Mess Menu");
-                setNavFragment(R.layout.mess_menu);
-                break;
+//            case R.id.nav_messMenu:
+//                setTitle("Mess Menu");
+//                setNavFragment(R.layout.mess_menu);
+//                break;
             case R.id.nav_transport:
                 setTitle("Transportation Services");
                 setNavFragment(R.layout.transport);
@@ -153,60 +153,120 @@ public class MainActivity extends AppCompatActivity
             case R.id.timetable_freshers_pdf:
                 fileName = "timetable_freshers_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/1st-Year-B.Tech-n-Dual.pdf";
+                website = getString(R.string.timetable_freshers_link);
                 break;
             case R.id.timetable_sbs_pdf:
                 fileName = "timetable_sbs_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/SBS.pdf";
+                website = getString(R.string.timetable_sbs_link);
                 break;
             case R.id.timetable_seocs_pdf:
                 fileName = "timetable_seocs_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/SEOCS_TT.pdf";
+                website = getString(R.string.timetable_seocs_link);
                 break;
             case R.id.timetable_ses_pdf:
                 fileName = "timetable_ses_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/SES_TT.pdf";
+                website = getString(R.string.timetable_ses_link);
                 break;
             case R.id.timetable_sif_pdf:
                 fileName = "timetable_sif_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/SIF_TT.pdf";
+                website = getString(R.string.timetable_sif_link);
                 break;
             case R.id.timetable_smmme_pdf:
                 fileName = "timetable_smmme_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/SMMME_TT.pdf";
+                website = getString(R.string.timetable_smmme_link);
                 break;
             case R.id.timetable_sms_pdf:
                 fileName = "timetable_sms_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/SMS_TT.pdf";
+                website = getString(R.string.timetable_sms_link);
                 break;
             case R.id.acad_calendar_pdf:
                 fileName = "acad_calendar_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19.pdf";
+                website = getString(R.string.acad_calendar_link);
                 break;
             case R.id.monthly_autumn_pdf:
                 fileName = "monthly_autumn_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Autumn.pdf";
+                website = getString(R.string.monthly_autumn_link);
                 break;
             case R.id.monthly_spring_pdf:
                 fileName = "monthly_spring_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Spring.pdf";
+                website = getString(R.string.monthly_spring_link);
                 break;
         }
 
-        IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
+        IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar, false);
         iitBbsScraping.execute();
     }
 
+    public void forceDownloadFromWeb(View view) {
+        String fileName = "";
+        String fileExtension = "";
+        String website = "";
 
+        switch (view.getId()) {
+            case R.id.timetable_freshers_pdf_force:
+                fileName = "timetable_freshers_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_freshers_link);
+                break;
+            case R.id.timetable_sbs_pdf_force:
+                fileName = "timetable_sbs_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_sbs_link);
+                break;
+            case R.id.timetable_seocs_pdf_force:
+                fileName = "timetable_seocs_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_seocs_link);
+                break;
+            case R.id.timetable_ses_pdf_force:
+                fileName = "timetable_ses_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_ses_link);
+                break;
+            case R.id.timetable_sif_pdf_force:
+                fileName = "timetable_sif_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_sif_link);
+                break;
+            case R.id.timetable_smmme_pdf_force:
+                fileName = "timetable_smmme_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_smmme_link);
+                break;
+            case R.id.timetable_sms_pdf_force:
+                fileName = "timetable_sms_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_sms_link);
+                break;
+            case R.id.acad_calendar_pdf_force:
+                fileName = "acad_calendar_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.acad_calendar_link);
+                break;
+            case R.id.monthly_autumn_pdf_force:
+                fileName = "monthly_autumn_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.monthly_autumn_link);
+                break;
+            case R.id.monthly_spring_pdf_force:
+                fileName = "monthly_spring_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.monthly_spring_link);
+                break;
+        }
+
+        IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar, true);
+        iitBbsScraping.execute();
+    }
 
     private void setNavFragment(int navLayout) {
         FragmentManager fragmentManager = getFragmentManager();

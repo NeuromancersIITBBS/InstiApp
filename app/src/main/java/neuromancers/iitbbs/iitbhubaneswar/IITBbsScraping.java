@@ -32,16 +32,18 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
     private String fileName = null;
     private String fileExtension = null;
     private ProgressBar progressBar = null;
+    private boolean forceUpdate = false;
 
     private long timeout = 5;
     private Context context = null;
     private File file = null;
 
-    public IITBbsScraping(String website, String fileName, String fileExtension, ProgressBar progressBar) {
+    public IITBbsScraping(String website, String fileName, String fileExtension, ProgressBar progressBar, boolean forceUpdate) {
         this.website = website;
         this.fileName = fileName;
         this.fileExtension = fileExtension;
         this.progressBar = progressBar;
+        this.forceUpdate = forceUpdate;
 
         context = progressBar.getContext().getApplicationContext();
     }
@@ -69,7 +71,7 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
         }
 
         file = getFile(fileName + "." + fileExtension);
-        if (file.exists()) {
+        if (file.exists() && !forceUpdate) {
             startFileViewActivity(file, "application/" + fileExtension);
             return Integer.valueOf(1);
         } else if (website.endsWith(".pdf")) {

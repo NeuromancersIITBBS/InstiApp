@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="timetable_freshers_link">http://www.iitbbs.ac.in/images/1st%20Year%20B_Tech%20&amp;%20Dual(1).pdf</string>
+    <string name="timetable_sbs_link">http://www.iitbbs.ac.in/images/SBS_TT2(2).pdf</string>
+    <string name="timetable_seocs_link">http://www.iitbbs.ac.in/images/SEOCS_TT2.pdf</string>
+    <string name="timetable_ses_link">http://www.iitbbs.ac.in/images/SES_TT2(1).pdf</string>
+    <string name="timetable_sif_link">http://www.iitbbs.ac.in/images/SIF_TT2(1).pdf</string>
+    <string name="timetable_smmme_link">http://www.iitbbs.ac.in/images/SMMME_TT2.pdf</string>
+    <string name="timetable_sms_link">http://www.iitbbs.ac.in/images/SMS_TT2.pdf</string>
+
+    <string name="acad_calendar_link">http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19.pdf</string>
+    <string name="monthly_autumn_link">http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Autumn.pdf</string>
+    <string name="monthly_spring_link">http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Spring.pdf</string>
+</resources>

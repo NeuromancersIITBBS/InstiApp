@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="downloadFromWeb"
-            android:src="@drawable/icons_pdf"
+            android:src="@drawable/icon_pdf"
             android:text="Open PDF" />
 
         <!--ImageButton
