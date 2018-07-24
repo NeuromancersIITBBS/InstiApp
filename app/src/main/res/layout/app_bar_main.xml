@@ -24,7 +24,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
                 android:indeterminateTint="@android:color/white"
-                android:padding="10dp" />
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp" />
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>

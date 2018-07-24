@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity
 //                setNavFragment(R.layout.mess_menu);
 //                break;
             case R.id.nav_transport:
-                setTitle("Transportation Services");
+                setTitle("Transportation");
                 setNavFragment(R.layout.transport);
                 break;
         }
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity
                 website = getString(R.string.transport_link);
                 break;
             //case R.id.transport_xls:
-                //application/vnd.ms-excel
+            //application/vnd.ms-excel
 //                String fileName = "transport";
 //                String fileExtension = "xls";
 //                String website = "http://www.iitbbs.ac.in/transportation.php";
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity
         String website = "";
 
         switch (view.getId()) {
-            case R.id.transport_pdf:
+            case R.id.transport_pdf_force:
                 fileName = "transport_pdf";
                 fileExtension = "pdf";
                 website = getString(R.string.transport_link);
@@ -272,8 +272,10 @@ public class MainActivity extends AppCompatActivity
                 break;
         }
 
-        IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar, true);
-        iitBbsScraping.execute();
+        if (!website.isEmpty()) {
+            IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar, true);
+            iitBbsScraping.execute();
+        }
     }
 
     private void setNavFragment(int navLayout) {

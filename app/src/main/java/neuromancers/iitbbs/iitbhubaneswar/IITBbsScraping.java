@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.tom_roush.pdfbox.pdmodel.PDDocument;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -99,7 +100,8 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
         long endTime = startTime;
         while ((endTime - startTime) / 1000000000 < timeout) {
             try {
-                document = Jsoup.connect(website).get();
+                Connection connection = Jsoup.connect(website);
+                document = connection.get();
                 break;
             } catch (IOException e) {
                 Toast.makeText(context, "Network Issues", Toast.LENGTH_SHORT).show();
