@@ -15,8 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.google.android.gms.maps.MapView;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -142,7 +140,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.transport_pdf:
                 fileName = "transport_pdf";
                 fileExtension = "pdf";
-                website = "http://www.iitbbs.ac.in/transportation.php";
+                website = getString(R.string.transport_link);
                 break;
             //case R.id.transport_xls:
                 //application/vnd.ms-excel
@@ -217,6 +215,11 @@ public class MainActivity extends AppCompatActivity
         String website = "";
 
         switch (view.getId()) {
+            case R.id.transport_pdf:
+                fileName = "transport_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.transport_link);
+                break;
             case R.id.timetable_freshers_pdf_force:
                 fileName = "timetable_freshers_pdf";
                 fileExtension = "pdf";

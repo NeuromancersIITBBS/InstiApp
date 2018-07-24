@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="transport_link">http://www.iitbbs.ac.in/transportation.php</string>
+
     <string name="timetable_freshers_link">http://www.iitbbs.ac.in/images/1st%20Year%20B_Tech%20&amp;%20Dual(1).pdf</string>
     <string name="timetable_sbs_link">http://www.iitbbs.ac.in/images/SBS_TT2(2).pdf</string>
     <string name="timetable_seocs_link">http://www.iitbbs.ac.in/images/SEOCS_TT2.pdf</string>
