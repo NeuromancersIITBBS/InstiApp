@@ -8,13 +8,49 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/transport_pdf"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="downloadFromWeb"
-            android:src="@drawable/icon_pdf"
-            android:text="Open PDF" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/transport_pdf_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Transport Schedule" />
+
+            <ImageButton
+                android:id="@+id/transport_pdf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@android:color/transparent"
+                android:onClick="downloadFromWeb"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_pdf"
+                android:text="Transport Schedule" />
+
+            <ImageButton
+                android:id="@+id/transport_pdf_force"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@android:color/transparent"
+                android:onClick="forceDownloadFromWeb"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_download"
+                android:text="Transport Schedule" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <!--ImageButton
             android:id="@+id/transport_xls"
