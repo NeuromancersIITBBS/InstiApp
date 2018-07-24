@@ -1,10 +1,14 @@
 package neuromancers.iitbbs.iitbhubaneswar;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
+import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +23,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import static android.support.v4.content.ContextCompat.checkSelfPermission;
 
 public class NavFragment extends Fragment {
 
@@ -71,13 +77,30 @@ public class NavFragment extends Fragment {
                     uiSettings.setZoomControlsEnabled(true);
                     uiSettings.setAllGesturesEnabled(true);
 
-                    googleMap.setMyLocationEnabled(true);
-//                    googleMap.setOnMyLocationClickListener(new GoogleMap.OnMyLocationClickListener() {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION)
+                                != PackageManager.PERMISSION_GRANTED ||
+                                checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                                        != PackageManager.PERMISSION_GRANTED) {
+                            // Permission is not granted
+                        } else {
+                            googleMap.setMyLocationEnabled(true);
+//                          googleMap.setOnMyLocationClickListener(new GoogleMap.OnMyLocationClickListener() {
 //                        @Override
 //                        public void onMyLocationClick(@NonNull Location location) {
 //
 //                        }
 //                    });
+                        }
+                    } else {
+                        googleMap.setMyLocationEnabled(true);
+//                          googleMap.setOnMyLocationClickListener(new GoogleMap.OnMyLocationClickListener() {
+//                        @Override
+//                        public void onMyLocationClick(@NonNull Location location) {
+//
+//                        }
+//                    });
+                    }
                 }
             });
         }
