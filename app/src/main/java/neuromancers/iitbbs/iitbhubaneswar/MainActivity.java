@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.google.android.gms.maps.MapView;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -53,6 +55,9 @@ public class MainActivity extends AppCompatActivity
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
+
+        setTitle("Campus Map");
+        setNavFragment(R.layout.map);
     }
 
     @Override
@@ -93,10 +98,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-//            case R.id.nav_map:
-//                setTitle("Campus Map");
-//                setNavFragment(R.layout.map_layout);
-//                break;
+            case R.id.nav_map:
+                setTitle("Campus Map");
+                setNavFragment(R.layout.map);
+                break;
             case R.id.nav_gymkhana:
                 setTitle("Students' Gymkhana");
                 setNavFragment(R.layout.gymkhana);
