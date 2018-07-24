@@ -16,6 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="composeMail"
-            android:src="@drawable/icon_mail" />
+            android:src="@drawable/icons_mail" />
     </LinearLayout>>
 </RelativeLayout>
