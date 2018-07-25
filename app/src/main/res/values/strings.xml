@@ -6,6 +6,6 @@
     <string name="nav_header_subtitle">www.iitbbs.ac.in</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="action_about">Developers</string>
+    <string name="action_about">Dev Team</string>
     <string name="title_activity_maps">Map</string>
 </resources>

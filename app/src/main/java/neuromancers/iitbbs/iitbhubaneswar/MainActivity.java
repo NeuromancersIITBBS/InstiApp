@@ -2,6 +2,8 @@ package neuromancers.iitbbs.iitbhubaneswar;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.NavigationView;
@@ -54,8 +56,7 @@ public class MainActivity extends AppCompatActivity
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
 
-        setTitle("Campus Map");
-        setNavFragment(R.layout.map);
+        jumpToHome();
     }
 
     @Override
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        } else if (findViewById(R.id.about_layout) != null) {
+            jumpToHome();
         } else {
             super.onBackPressed();
         }
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity
 //                setNavFragment(R.layout.settings);
 //                break;
             case R.id.action_about:
+                setTitle("Dev Team");
                 setNavFragment(R.layout.about);
                 break;
         }
@@ -131,6 +135,28 @@ public class MainActivity extends AppCompatActivity
         instiAppUtil.onClick(view);
     }
 
+    /**
+     * OnClick function to handle intents for mail
+     *
+     * @param view
+     */
+    public void composeMail(View view) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"secyprogsoc.sg@iitbbs.ac.in"});
+        startActivity(intent);
+    }
+
+    private void jumpToHome() {
+        setTitle("Campus Map");
+        setNavFragment(R.layout.map);
+    }
+
+    /**
+     * OnClick function to view files (or download from internet if not available)
+     *
+     * @param view
+     */
     public void downloadFromWeb(View view) {
         String fileName = "";
         String fileExtension = "";
@@ -209,6 +235,11 @@ public class MainActivity extends AppCompatActivity
         iitBbsScraping.execute();
     }
 
+    /**
+     * OnClick function to force download from internet (for updating files)
+     *
+     * @param view
+     */
     public void forceDownloadFromWeb(View view) {
         String fileName = "";
         String fileExtension = "";
@@ -278,6 +309,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Replace fragments in navigation drawer setup on changing navigation drawer options
+     *
+     * @param navLayout
+     */
     private void setNavFragment(int navLayout) {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
