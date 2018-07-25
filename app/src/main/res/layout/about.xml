@@ -47,16 +47,16 @@
                 android:text="Contact Us" />
 
             <ImageButton
-                android:id="@+id/acad_calendar_pdf"
+                android:id="@+id/compose_mail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="6"
                 android:background="@android:color/transparent"
-                android:onClick="downloadFromWeb"
+                android:onClick="composeMail"
                 android:padding="10dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/icon_mail"
-                android:text="Academic Calendar" />
+                android:text="Contact Us" />
 
         </LinearLayout>
 
