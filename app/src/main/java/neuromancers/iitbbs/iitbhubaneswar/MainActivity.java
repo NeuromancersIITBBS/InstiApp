@@ -100,10 +100,10 @@ public class MainActivity extends AppCompatActivity
                 setTitle("Campus Map");
                 setNavFragment(R.layout.map);
                 break;
-            case R.id.nav_gymkhana:
-                setTitle("Students' Gymkhana");
-                setNavFragment(R.layout.gymkhana);
-                break;
+//            case R.id.nav_gymkhana:
+//                setTitle("Students' Gymkhana");
+//                setNavFragment(R.layout.gymkhana);
+//                break;
             case R.id.nav_timetable:
                 setTitle("Academic Time Table");
                 setNavFragment(R.layout.timetable);
