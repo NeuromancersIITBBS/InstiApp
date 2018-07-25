@@ -8,118 +8,158 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="5dp">
 
-            <Button
-                android:id="@+id/acad_calendar_pdf_text"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Academic Calendar" />
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/acad_calendar_pdf"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:onClick="downloadFromWeb"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_pdf"
-                android:text="Academic Calendar" />
+                <Button
+                    android:id="@+id/acad_calendar_pdf_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="Academic Calendar" />
 
-            <ImageButton
-                android:id="@+id/acad_calendar_pdf_force"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:onClick="forceDownloadFromWeb"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_download"
-                android:text="Academic Calendar" />
+                <ImageButton
+                    android:id="@+id/acad_calendar_pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:onClick="downloadFromWeb"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_pdf"
+                    android:text="Academic Calendar" />
 
-        </LinearLayout>
+                <ImageButton
+                    android:id="@+id/acad_calendar_pdf_force"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:onClick="forceDownloadFromWeb"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_download"
+                    android:text="Academic Calendar" />
 
-        <LinearLayout
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="5dp">
 
-            <Button
-                android:id="@+id/monthly_spring_pdf_text"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Monthly Spring" />
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/monthly_spring_pdf"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:onClick="downloadFromWeb"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_pdf"
-                android:text="Monthly Spring" />
+                <Button
+                    android:id="@+id/monthly_spring_pdf_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="Monthly Spring" />
 
-            <ImageButton
-                android:id="@+id/monthly_spring_pdf_force"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:onClick="forceDownloadFromWeb"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_download"
-                android:text="Monthly Spring" />
-        </LinearLayout>
+                <ImageButton
+                    android:id="@+id/monthly_spring_pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:onClick="downloadFromWeb"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_pdf"
+                    android:text="Monthly Spring" />
 
-        <LinearLayout
+                <ImageButton
+                    android:id="@+id/monthly_spring_pdf_force"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:onClick="forceDownloadFromWeb"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_download"
+                    android:text="Monthly Spring" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="5dp">
 
-            <Button
-                android:id="@+id/monthly_autumn_pdf_test"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Monthly Autumn" />
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/monthly_autumn_pdf"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:onClick="downloadFromWeb"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_pdf"
-                android:text="Monthly Autumn" />
+                <Button
+                    android:id="@+id/monthly_autumn_pdf_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="Monthly Autumn" />
 
-            <ImageButton
-                android:id="@+id/monthly_autumn_pdf_force"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:onClick="forceDownloadFromWeb"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_download"
-                android:text="Monthly Autumn" />
+                <ImageButton
+                    android:id="@+id/monthly_autumn_pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:onClick="downloadFromWeb"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_pdf"
+                    android:text="Monthly Autumn" />
 
-        </LinearLayout>
+                <ImageButton
+                    android:id="@+id/monthly_autumn_pdf_force"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:onClick="forceDownloadFromWeb"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_download"
+                    android:text="Monthly Autumn" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
 </RelativeLayout>

@@ -9,10 +9,10 @@
             android:icon="@drawable/icon_map"
             android:title="Campus Map" />
 
-        <item
-            android:id="@+id/nav_gymkhana"
-            android:icon="@drawable/icon_gymkhana"
-            android:title="Students' Gymkhana" />
+        <!--<item-->
+            <!--android:id="@+id/nav_gymkhana"-->
+            <!--android:icon="@drawable/icon_gymkhana"-->
+            <!--android:title="Students' Gymkhana" />-->
 
         <item
             android:id="@+id/nav_calendar"

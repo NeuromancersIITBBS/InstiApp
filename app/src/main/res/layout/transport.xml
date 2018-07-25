@@ -8,57 +8,56 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="5dp">
 
-            <Button
-                android:id="@+id/transport_pdf_text"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Transport Schedule" />
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/transport_pdf"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:onClick="downloadFromWeb"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_pdf"
-                android:text="Transport Schedule" />
+                <Button
+                    android:id="@+id/transport_pdf_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="Transport Schedule" />
 
-            <ImageButton
-                android:id="@+id/transport_pdf_force"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:onClick="forceDownloadFromWeb"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_download"
-                android:text="Transport Schedule" />
+                <ImageButton
+                    android:id="@+id/transport_pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:onClick="downloadFromWeb"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_pdf"
+                    android:text="Transport Schedule" />
 
-        </LinearLayout>
-    </LinearLayout>
+                <ImageButton
+                    android:id="@+id/transport_pdf_force"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:onClick="forceDownloadFromWeb"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_download"
+                    android:text="Transport Schedule" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!--ImageButton
-            android:id="@+id/transport_xls"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="downloadFromWeb"
-            android:src="@drawable/icons_xls"
-            android:text="Open XLS" /-->
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
