@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:shrinkColumns="*"
+    android:stretchColumns="*"
+    android:scrollbars = "vertical">
+
+
+
+    <!-- Row 1 Starts From Here -->
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+
+        <!--The heading row with holiday and dates-->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="S.No"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Holiday"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Dates"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Day"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <!--Second row with holiday list-->
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="1"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Republic Day"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="26 January"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Fri"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="2"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Mahasivratri"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="14 February"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Wed"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="3"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Holi"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="2 March"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Fri"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="4"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Mahavir Jayanti"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="29 March"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Thurs"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="5"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Good Friday"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="30 March"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Fri"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="6"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Buddha Purnima"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="30 April"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Mon"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="7"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Idu’l Fitr"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="16 June"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Sat"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="8"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Independence Day"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="15 August"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Wed"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="9"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Idu’l Zuha"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="22 August"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Wed"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="10"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Muharram"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="21 September"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Fri"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="11"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Gandhiji's Birthday"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="2 October"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Tue"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="12"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Dussehra"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="16-19 October"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Tue,Wed,Thu,Fri"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="13"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Diwali"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="7 November"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Wed"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="14"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Id-e-milad"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="21 November"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Wed"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="15"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Guru Nanak’s Birthday"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="23 November"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Fri"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="16"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Christmas"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="25 December"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Tue"
+            android:textColor="#000000"
+            android:textSize="11dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
+
+
+</TableLayout>

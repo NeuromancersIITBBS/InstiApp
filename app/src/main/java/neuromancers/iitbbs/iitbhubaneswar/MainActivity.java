@@ -124,6 +124,10 @@ public class MainActivity extends AppCompatActivity
                 setTitle("Transportation");
                 setNavFragment(R.layout.transport);
                 break;
+            case R.id.nav_holiday_list:
+                setTitle("Holiday List");
+                setNavFragment(R.layout.holiday_list);
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
