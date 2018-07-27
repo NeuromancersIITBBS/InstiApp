@@ -132,6 +132,14 @@ public class MainActivity extends AppCompatActivity
                 setTitle("Transportation");
                 setNavFragment(R.layout.transport);
                 break;
+            case R.id.nav_holidays:
+                setTitle("Public Holidays");
+//                setNavFragment(R.layout.h);
+                break;
+            case R.id.nav_regulations:
+                setTitle("Regulations");
+                setNavFragment(R.layout.regulations);
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -237,6 +245,27 @@ public class MainActivity extends AppCompatActivity
                 fileExtension = "pdf";
                 website = getString(R.string.monthly_spring_link);
                 break;
+
+            case R.id.regulations_btech_pdf:
+                fileName = "regulations_btech_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.regulations_btech_link);
+                break;
+            case R.id.regulations_msc_pdf:
+                fileName = "regulations_msc_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.regulations_msc_link);
+                break;
+            case R.id.regulations_mtech_pdf:
+                fileName = "regulations_mtech_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.regulations_mtech_link);
+                break;
+            case R.id.regulations_phd_pdf:
+                fileName = "regulations_phd_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.regulations_phd_link);
+                break;
         }
 
         IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar, false);
@@ -308,6 +337,27 @@ public class MainActivity extends AppCompatActivity
                 fileName = "monthly_spring_pdf";
                 fileExtension = "pdf";
                 website = getString(R.string.monthly_spring_link);
+                break;
+
+            case R.id.regulations_btech_pdf_force:
+                fileName = "regulations_btech_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.regulations_btech_link);
+                break;
+            case R.id.regulations_msc_pdf_force:
+                fileName = "regulations_msc_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.regulations_msc_link);
+                break;
+            case R.id.regulations_mtech_pdf_force:
+                fileName = "regulations_mtech_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.regulations_mtech_link);
+                break;
+            case R.id.regulations_phd_pdf_force:
+                fileName = "regulations_phd_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.regulations_phd_link);
                 break;
         }
 
