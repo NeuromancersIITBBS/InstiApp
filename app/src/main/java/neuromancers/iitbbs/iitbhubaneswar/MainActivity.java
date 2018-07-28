@@ -25,6 +25,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.SupportMapFragment;
 
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_holidays:
                 setTitle("Public Holidays");
-//                setNavFragment(R.layout.h);
+                setNavFragment(R.layout.holiday_list);
                 break;
             case R.id.nav_regulations:
                 setTitle("Regulations");
