@@ -15,7 +15,7 @@
             <!--android:title="Students' Gymkhana" />-->
     </group>
 
-    <item android:title="Intitute">
+    <item android:title="Institute">
         <menu>
             <item
                 android:id="@+id/nav_timetable"
