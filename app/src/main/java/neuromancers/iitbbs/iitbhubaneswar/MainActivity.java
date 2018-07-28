@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_holidays:
                 setTitle("Public Holidays");
-//                setNavFragment(R.layout.h);
+                setNavFragment(R.layout.holiday_list);
                 break;
             case R.id.nav_regulations:
                 setTitle("Regulations");
