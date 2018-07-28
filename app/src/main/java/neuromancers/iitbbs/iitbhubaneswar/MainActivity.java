@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity
 //                setNavFragment(R.layout.settings);
 //                break;
             case R.id.action_about:
-                setTitle("Dev Team");
+                setTitle("About");
                 setNavFragment(R.layout.about);
                 break;
         }
