@@ -2,17 +2,17 @@
 <resources>
     <string name="transport_link">http://www.iitbbs.ac.in/transportation.php</string>
 
-    <string name="timetable_freshers_link">http://www.iitbbs.ac.in/images/1st%20Year%20B_Tech%20&amp;%20Dual(1).pdf</string>
-    <string name="timetable_sbs_link">http://www.iitbbs.ac.in/images/SBS_TT2(2).pdf</string>
-    <string name="timetable_seocs_link">http://www.iitbbs.ac.in/images/SEOCS_TT2.pdf</string>
-    <string name="timetable_ses_link">http://www.iitbbs.ac.in/images/SES_TT2(1).pdf</string>
-    <string name="timetable_sif_link">http://www.iitbbs.ac.in/images/SIF_TT2(1).pdf</string>
-    <string name="timetable_smmme_link">http://www.iitbbs.ac.in/images/SMMME_TT2.pdf</string>
-    <string name="timetable_sms_link">http://www.iitbbs.ac.in/images/SMS_TT2.pdf</string>
+    <string name="timetable_freshers_link">http://www.iitbbs.ac.in/curriculum_doc/1st%20year-TT-2.pdf</string>
+    <string name="timetable_sbs_link">http://www.iitbbs.ac.in/curriculum_doc/SBS-TT-2.pdf</string>
+    <string name="timetable_seocs_link">http://www.iitbbs.ac.in/curriculum_doc/SOECS-TT-2.pdf</string>
+    <string name="timetable_ses_link">http://www.iitbbs.ac.in/curriculum_doc/SES-TT-3.pdf</string>
+    <string name="timetable_sif_link">http://www.iitbbs.ac.in/curriculum_doc/SIF-TT-3.pdf</string>
+    <string name="timetable_smmme_link">http://www.iitbbs.ac.in/curriculum_doc/SMMME-TT-3.pdf</string>
+    <string name="timetable_sms_link">http://www.iitbbs.ac.in/curriculum_doc/SMS-TT-2.pdf</string>
 
     <string name="acad_calendar_link">http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19.pdf</string>
     <string name="monthly_autumn_link">http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Autumn.pdf</string>
-    <string name="monthly_spring_link">http://www.iitbbs.ac.in/curriculum_doc/Academic–Calendar–2018-19-Spring.pdf</string>
+    <string name="monthly_spring_link">http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Spring.pdf</string>
 
     <string name="regulations_btech_link">http://www.iitbbs.ac.in/curriculum_doc/IIT_BBS_BTech_Regulation_2010.pdf</string>
     <string name="regulations_mtech_link">http://www.iitbbs.ac.in/curriculum_doc/M.Tech.regulation.pdf</string>
