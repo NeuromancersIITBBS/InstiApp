@@ -284,46 +284,47 @@ public class MainActivity extends AppCompatActivity
         String website = "";
 
         switch (view.getId()) {
-            case R.id.transport_pdf_force:
+            case R.id.transport_force:
                 fileName = "transport_pdf";
                 fileExtension = "pdf";
                 website = getString(R.string.transport_link);
                 break;
-            case R.id.timetable_freshers_pdf_force:
+            case R.id.timetable_force:
                 fileName = "timetable_freshers_pdf";
                 fileExtension = "pdf";
-                website = getString(R.string.timetable_freshers_link);
+                //website = getString(R.string.timetable_freshers_link);
+                website = "http://www.iitbbs.ac.in/time-table.php";
                 break;
-            case R.id.timetable_sbs_pdf_force:
-                fileName = "timetable_sbs_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sbs_link);
-                break;
-            case R.id.timetable_seocs_pdf_force:
-                fileName = "timetable_seocs_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_seocs_link);
-                break;
-            case R.id.timetable_ses_pdf_force:
-                fileName = "timetable_ses_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_link);
-                break;
-            case R.id.timetable_sif_pdf_force:
-                fileName = "timetable_sif_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sif_link);
-                break;
-            case R.id.timetable_smmme_pdf_force:
-                fileName = "timetable_smmme_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_smmme_link);
-                break;
-            case R.id.timetable_sms_pdf_force:
-                fileName = "timetable_sms_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sms_link);
-                break;
+//            case R.id.timetable_sbs_pdf_force:
+//                fileName = "timetable_sbs_pdf";
+//                fileExtension = "pdf";
+//                website = getString(R.string.timetable_sbs_link);
+//                break;
+//            case R.id.timetable_seocs_pdf_force:
+//                fileName = "timetable_seocs_pdf";
+//                fileExtension = "pdf";
+//                website = getString(R.string.timetable_seocs_link);
+//                break;
+//            case R.id.timetable_ses_pdf_force:
+//                fileName = "timetable_ses_pdf";
+//                fileExtension = "pdf";
+//                website = getString(R.string.timetable_ses_link);
+//                break;
+//            case R.id.timetable_sif_pdf_force:
+//                fileName = "timetable_sif_pdf";
+//                fileExtension = "pdf";
+//                website = getString(R.string.timetable_sif_link);
+//                break;
+//            case R.id.timetable_smmme_pdf_force:
+//                fileName = "timetable_smmme_pdf";
+//                fileExtension = "pdf";
+//                website = getString(R.string.timetable_smmme_link);
+//                break;
+//            case R.id.timetable_sms_pdf_force:
+//                fileName = "timetable_sms_pdf";
+//                fileExtension = "pdf";
+//                website = getString(R.string.timetable_sms_link);
+//                break;
             case R.id.acad_calendar_pdf_force:
                 fileName = "acad_calendar_pdf";
                 fileExtension = "pdf";

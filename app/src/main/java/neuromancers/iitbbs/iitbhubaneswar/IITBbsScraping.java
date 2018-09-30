@@ -67,7 +67,7 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected Integer doInBackground(Void... voids) {
-        if(Looper.myLooper() == null) { // check already Looper is associated or not.
+        if (Looper.myLooper() == null) { // check already Looper is associated or not.
             Looper.prepare(); // No Looper is defined So define a new one
         }
 
@@ -114,18 +114,21 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
             Elements anchorTags = document.getElementsByTag("a");
             for (Element anchorTag : anchorTags) {
                 String href = anchorTag.attr("href");
-                if(href.endsWith(".pdf") || href.endsWith(".xlsx") || href.endsWith(".xls")) {
-                    System.out.println(href);
-                }
-                if (href.endsWith(".pdf")) {
-                    String fileLink = "http://www.iitbbs.ac.in" + href.substring(2);
-                    if(downloadPDFFile(fileLink)==-1) return -1;
-                } else if (href.endsWith(".xlsx") || href.endsWith(".xls")){
-                    String fileLink = "http://www.iitbbs.ac.in" + href.substring(2);
-                    //if(downloadExcelFile(fileLink)==-1) return -1;
-                } else if (href.endsWith(".docx") || href.endsWith(".doc")){
-                    String fileLink = "http://www.iitbbs.ac.in" + href.substring(2);
-                    //if(downloadDocFile(fileLink)==-1) return -1;
+                if (href.endsWith(".pdf") || href.endsWith(".xlsx") || href.endsWith(".xls") || href.endsWith(".docx") || href.endsWith(".doc")) {
+                    if (href.startsWith("..")) href = "http://www.iitbbs.ac.in" + href.substring(2);
+                    else if (!href.startsWith("http://www.iitbbs.ac.in/"))
+                        href = "http://www.iitbbs.ac.in/" + href;
+
+                    if(!href.contains(" ")) {
+                        if (href.endsWith(".pdf")) {
+                            //if(downloadPDFFile(href)==-1) return -1;
+                        } else if (href.endsWith(".xlsx") || href.endsWith(".xls")) {
+                            //if(downloadExcelFile(href)==-1) return -1;
+                        } else if (href.endsWith(".docx") || href.endsWith(".doc")) {
+                            //if(downloadDocFile(href)==-1) return -1;
+                        }
+                        System.out.println(href);
+                    }
                 }
             }
         }
