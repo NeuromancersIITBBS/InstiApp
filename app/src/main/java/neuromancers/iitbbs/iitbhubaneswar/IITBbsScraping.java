@@ -76,7 +76,7 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
             startFileViewActivity(file, "application/" + fileExtension);
             return Integer.valueOf(1);
         } else if (website.endsWith(".pdf")) {
-            return Integer.valueOf(downloadFile(website));
+            return Integer.valueOf(downloadPDFFile(website));
         } else {
             return Integer.valueOf(scrape());
         }
@@ -114,10 +114,18 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
             Elements anchorTags = document.getElementsByTag("a");
             for (Element anchorTag : anchorTags) {
                 String href = anchorTag.attr("href");
+                if(href.endsWith(".pdf") || href.endsWith(".xlsx") || href.endsWith(".xls")) {
+                    System.out.println(href);
+                }
                 if (href.endsWith(".pdf")) {
                     String fileLink = "http://www.iitbbs.ac.in" + href.substring(2);
-
-                    return downloadFile(fileLink);
+                    if(downloadPDFFile(fileLink)==-1) return -1;
+                } else if (href.endsWith(".xlsx") || href.endsWith(".xls")){
+                    String fileLink = "http://www.iitbbs.ac.in" + href.substring(2);
+                    //if(downloadExcelFile(fileLink)==-1) return -1;
+                } else if (href.endsWith(".docx") || href.endsWith(".doc")){
+                    String fileLink = "http://www.iitbbs.ac.in" + href.substring(2);
+                    //if(downloadDocFile(fileLink)==-1) return -1;
                 }
             }
         }
@@ -125,7 +133,7 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
         return -1;
     }
 
-    private int downloadFile(String fileLink) {
+    private int downloadPDFFile(String fileLink) {
         try {
             URL link = new URL(fileLink);
             URLConnection urlConnection = link.openConnection();
