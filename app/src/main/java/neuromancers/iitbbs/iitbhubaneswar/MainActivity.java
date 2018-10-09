@@ -141,6 +141,15 @@ public class MainActivity extends AppCompatActivity
                 setTitle("Regulations");
                 setNavFragment(R.layout.regulations);
                 break;
+            case R.id.nav_erp:
+                Fragment erp_frag = new Erp();
+                if (erp_frag != null) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction ft = fragmentManager.beginTransaction();
+                    ft.replace(R.id.content_frame, erp_frag);
+                    ft.commit();
+                }
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
