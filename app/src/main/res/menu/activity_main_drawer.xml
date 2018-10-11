@@ -38,7 +38,7 @@
                 android:title="Regulations" />
             <item
                 android:id="@+id/nav_erp"
-                android:icon="@drawable/icon_calendar"
+                android:icon="@drawable/icon_erp"
                 android:title="ERP"/>
         </menu>
     </item>

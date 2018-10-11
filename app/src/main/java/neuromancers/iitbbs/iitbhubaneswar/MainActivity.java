@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity
 
         switch (id) {
 //            case R.id.action_settings:
+//                setTitle("Settings");
 //                setNavFragment(R.layout.settings);
 //                break;
             case R.id.action_about:
