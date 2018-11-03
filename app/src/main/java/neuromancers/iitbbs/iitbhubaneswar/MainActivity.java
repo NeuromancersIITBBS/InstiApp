@@ -15,11 +15,16 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -27,7 +32,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,NavFragment.communicator {
+    private Switch myswitch;
+    private int boolVal;
+    private int Val = -1;
+    private LinearLayout Nav_Back;
+    SaveTheme savetheme;
 
     private InstiAppUtil instiAppUtil = new InstiAppUtil();
 
@@ -35,12 +45,30 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        savetheme = new SaveTheme(this);
+        if(savetheme.loadNightModeSate()==false) {
+            setTheme(R.style.AppTheme);
+            Val = 0;
+        }
+        else {
+            setTheme(R.style.DarkTheme);
+            Val = 1;
+        }
         super.onCreate(savedInstanceState);
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
-
         setContentView(R.layout.activity_main);
+
+        //Change the Navigation Header background.
+        NavigationView navi = (NavigationView)findViewById(R.id.nav_view);
+        Nav_Back = navi.getHeaderView(0).findViewById(R.id.header);
+        if(Val==1)
+            Nav_Back.setBackgroundResource(R.drawable.side_nav_bar_dark);
+        else
+            Nav_Back.setBackgroundResource(R.drawable.side_nav_bar);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -67,6 +95,50 @@ public class MainActivity extends AppCompatActivity
 
         jumpToHome();
     }
+    @Override
+    public void themes(View view) {
+        myswitch = (Switch)findViewById(R.id.theme_switch);
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            myswitch.setChecked(true);
+        }
+        myswitch.setOnCheckedChangeListener (new CompoundButton.OnCheckedChangeListener() {
+            //Navigation bar Background
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (!isChecked) {
+                    savetheme.setNightModeState(true);
+                    restartApp();
+                } else {
+                    savetheme.setNightModeState(false);
+                    restartApp();
+                }
+            }
+        });
+        Button b = findViewById(R.id.theme_button);
+        if(Val!=-1)
+            boolVal = Val;
+        else if((String)b.getText()=="Dark Theme")
+            boolVal = 1;
+        if(boolVal==1)
+            b.setText((CharSequence)"Light Theme");
+        else
+            b.setText((CharSequence)"Dark Theme");
+        if(boolVal==0) {
+            savetheme.setNightModeState(true);
+            restartApp();
+        }
+        else {
+            savetheme.setNightModeState(false);
+            restartApp();
+        }
+    }
+    public void restartApp()
+    {
+        Intent i = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(i);
+        finish(); }
 
     @Override
     public void onBackPressed() {
@@ -91,9 +163,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-//            case R.id.action_settings:
-//                setNavFragment(R.layout.settings);
-//                break;
+            case R.id.action_settings:
+                setTitle("Settings");
+                setNavFragment(R.layout.settings);
+                break;
             case R.id.action_about:
                 setTitle("About");
                 setNavFragment(R.layout.about);
