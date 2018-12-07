@@ -263,4 +263,10 @@ public class NavFragment extends Fragment {
             }
         }
     }
+
+    //Interface to connect Fragment to the MainActivity
+    public interface communicator {
+
+        public void themes(View view);
+    }
 }
