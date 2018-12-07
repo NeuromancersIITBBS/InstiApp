@@ -4,8 +4,10 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
@@ -20,11 +22,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity
     private int Val = -1;
     private LinearLayout Nav_Back;
     SaveTheme savetheme;
-
+    boolean doublepress=false;
     private InstiAppUtil instiAppUtil = new InstiAppUtil();
 
     private ProgressBar progressBar = null;
@@ -142,15 +148,32 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        WebView webView = (WebView) this.findViewById( R.id.erp_webview );
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else if (findViewById(R.id.about_layout) != null) {
-            jumpToHome();
-        } else {
-            super.onBackPressed();
         }
-    }
+
+       else if(findViewById(R.id.map_layout) != null)  {
+            if(doublepress)
+            super.onBackPressed();
+            else{
+            this.doublepress=true;
+            Toast.makeText( this, "Please press BACK again to exit", Toast.LENGTH_SHORT ).show();
+            new Handler().postDelayed( new Runnable() {
+                @Override
+                public void run() {
+                    doublepress=false;
+                }
+            },2000 );
+        }}
+        else if(findViewById( R.id.erp_webview  )!=null&&webView.canGoBack()) {
+            webView.goBack();
+        }
+        else
+            jumpToHome();
+        }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
