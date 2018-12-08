@@ -19,7 +19,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.graphics.Color;
+import android.os.Handler;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -28,7 +32,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    boolean doublepress=false;
     private InstiAppUtil instiAppUtil = new InstiAppUtil();
 
     private ProgressBar progressBar = null;
