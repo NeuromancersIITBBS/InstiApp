@@ -19,7 +19,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.graphics.Color;
+import android.os.Handler;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -28,7 +32,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    boolean doublepress=false;
     private InstiAppUtil instiAppUtil = new InstiAppUtil();
 
     private ProgressBar progressBar = null;
@@ -69,15 +73,35 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
+     public void onBackPressed() {
+        WebView webView = (WebView) this.findViewById( R.id.erp_webview );
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else if (findViewById(R.id.about_layout) != null) {
-            jumpToHome();
-        } else {
-            super.onBackPressed();
         }
+
+        else if(findViewById(R.id.map_layout) != null)  {
+            if(doublepress)
+                super.onBackPressed();
+            else{
+                this.doublepress=true;
+                Snackbar snackbar = Snackbar.make( drawer,"Please press BACK again to exit", Snackbar.LENGTH_SHORT );
+                snackbar.show();
+                View snackview = snackbar.getView();
+                TextView textView = snackview.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.rgb( 255,255,255 ) );
+                new Handler().postDelayed( new Runnable() {
+                    @Override
+                    public void run() {
+                        doublepress=false;
+                    }
+                },2000 );
+            }}
+        else if(findViewById( R.id.erp_webview  )!=null&&webView.canGoBack()) {
+            webView.goBack();
+        }
+        else
+            jumpToHome();
     }
 
     @Override
