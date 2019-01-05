@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-     public void onBackPressed() {
+    public void onBackPressed() {
         WebView webView = (WebView) this.findViewById( R.id.erp_webview );
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -244,10 +244,20 @@ public class MainActivity extends AppCompatActivity
                 fileExtension = "pdf";
                 website = getString(R.string.timetable_seocs_link);
                 break;
-            case R.id.timetable_ses_pdf:
-                fileName = "timetable_ses_pdf";
+            case R.id.timetable_ses_ece_pdf:
+                fileName = "timetable_ses_ece_pdf";
                 fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_link);
+                website = getString(R.string.timetable_ses_ece_link);
+                break;
+            case R.id.timetable_ses_cse_pdf:
+                fileName = "timetable_ses_cse_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_ses_cse_link);
+                break;
+            case R.id.timetable_ses_ee_pdf:
+                fileName = "timetable_ses_ee_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_ses_ee_link);
                 break;
             case R.id.timetable_sif_pdf:
                 fileName = "timetable_sif_pdf";
@@ -337,10 +347,20 @@ public class MainActivity extends AppCompatActivity
                 fileExtension = "pdf";
                 website = getString(R.string.timetable_seocs_link);
                 break;
-            case R.id.timetable_ses_pdf_force:
-                fileName = "timetable_ses_pdf";
+            case R.id.timetable_ses_ece_pdf_force:
+                fileName = "timetable_ses_ece_pdf";
                 fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_link);
+                website = getString(R.string.timetable_ses_ece_link);
+                break;
+            case R.id.timetable_ses_cse_pdf_force:
+                fileName = "timetable_ses_cse_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_ses_cse_link);
+                break;
+            case R.id.timetable_ses_ee_pdf_force:
+                fileName = "timetable_ses_ee_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_ses_ee_link);
                 break;
             case R.id.timetable_sif_pdf_force:
                 fileName = "timetable_sif_pdf";
