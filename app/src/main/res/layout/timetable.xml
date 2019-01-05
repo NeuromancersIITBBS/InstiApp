@@ -4,414 +4,526 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/timetable_freshers_pdf_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center_vertical|start"
-                    android:padding="10dp"
-                    android:text="Freshers" />
-
-                <ImageButton
-                    android:id="@+id/timetable_freshers_pdf"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="downloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_pdf"
-                    android:text="Academic Calendar" />
-
-                <ImageButton
-                    android:id="@+id/timetable_freshers_pdf_force"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="forceDownloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_download"
-                    android:text="Academic Calendar" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/timetable_sbs_pdf_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center_vertical|start"
-                    android:padding="10dp"
-                    android:text="SBS" />
-
-                <ImageButton
-                    android:id="@+id/timetable_sbs_pdf"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="downloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_pdf"
-                    android:text="Monthly Spring" />
-
-                <ImageButton
-                    android:id="@+id/timetable_sbs_pdf_force"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="forceDownloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_download"
-                    android:text="Monthly Spring" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/timetable_seocs_pdf_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center_vertical|start"
-                    android:padding="10dp"
-                    android:text="SEOCS" />
-
-                <ImageButton
-                    android:id="@+id/timetable_seocs_pdf"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="downloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_pdf"
-                    android:text="Monthly Autumn" />
-
-                <ImageButton
-                    android:id="@+id/timetable_seocs_pdf_force"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="forceDownloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_download"
-                    android:text="Monthly Autumn" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/timetable_ses_pdf_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center_vertical|start"
-                    android:padding="10dp"
-                    android:text="SES" />
-
-                <ImageButton
-                    android:id="@+id/timetable_ses_pdf"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="downloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_pdf"
-                    android:text="Academic Calendar" />
-
-                <ImageButton
-                    android:id="@+id/timetable_ses_pdf_force"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="forceDownloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_download"
-                    android:text="Academic Calendar" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/timetable_sif_pdf_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center_vertical|start"
-                    android:padding="10dp"
-                    android:text="SIF" />
-
-                <ImageButton
-                    android:id="@+id/timetable_sif_pdf"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="downloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_pdf"
-                    android:text="Monthly Spring" />
-
-                <ImageButton
-                    android:id="@+id/timetable_sif_pdf_force"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="forceDownloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_download"
-                    android:text="Monthly Spring" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/timetable_smmme_pdf_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center_vertical|start"
-                    android:padding="10dp"
-                    android:text="SMMME" />
-
-                <ImageButton
-                    android:id="@+id/timetable_smmme_pdf"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="downloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_pdf"
-                    android:text="Monthly Autumn" />
-
-                <ImageButton
-                    android:id="@+id/timetable_smmme_pdf_force"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="forceDownloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_download"
-                    android:text="Monthly Autumn" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/timetable_sms_pdf_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center_vertical|start"
-                    android:padding="10dp"
-                    android:text="SMS" />
-
-                <ImageButton
-                    android:id="@+id/timetable_sms_pdf"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="downloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_pdf"
-                    android:text="Monthly Autumn" />
-
-                <ImageButton
-                    android:id="@+id/timetable_sms_pdf_force"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:onClick="forceDownloadFromWeb"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_download"
-                    android:text="Monthly Autumn" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="87dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/timetable_query_text"
-                android:layout_width="185dp"
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:paddingBottom="10dp"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:text="For any queries regarding time table visit : "
-                android:textAppearance="@style/TextAppearance.AppCompat" />
+                app:cardCornerRadius="5dp">
 
-            <ImageView
-                android:id="@+id/timetable_query_web"
-                android:layout_width="5dp"
-                android:layout_height="33dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:onClick="redirectToWeb"
-                android:paddingLeft="1dp"
-                app:srcCompat="@drawable/icon_net" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_freshers_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="Freshers" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_freshers_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Academic Calendar" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_freshers_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Academic Calendar" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_sbs_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="SBS" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_sbs_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Monthly Spring" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_sbs_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Monthly Spring" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_seocs_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="SEOCS" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_seocs_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Monthly Autumn" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_seocs_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Monthly Autumn" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_ses_ece_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="SES (ECE)" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_ses_ece_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Academic Calendar" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_ses_ece_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Academic Calendar" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_ses_cse_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="SES (CSE)" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_ses_cse_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Academic Calendar" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_ses_cse_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Academic Calendar" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_ses_ee_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="SES (EE)" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_ses_ee_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Academic Calendar" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_ses_ee_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Academic Calendar" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_sif_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="SIF" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_sif_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Monthly Spring" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_sif_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Monthly Spring" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_smmme_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="SMMME" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_smmme_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Monthly Autumn" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_smmme_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Monthly Autumn" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/timetable_sms_pdf_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:padding="10dp"
+                        android:text="SMS" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_sms_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="downloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_pdf"
+                        android:text="Monthly Autumn" />
+
+                    <ImageButton
+                        android:id="@+id/timetable_sms_pdf_force"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:onClick="forceDownloadFromWeb"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_download"
+                        android:text="Monthly Autumn" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="87dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/timetable_query_text"
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="10dp"
+                    android:text="For any queries regarding time table visit : "
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                <ImageView
+                    android:id="@+id/timetable_query_web"
+                    android:layout_width="5dp"
+                    android:layout_height="33dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:onClick="redirectToWeb"
+                    android:paddingLeft="1dp"
+                    app:srcCompat="@drawable/icon_net" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
