@@ -274,6 +274,11 @@ public class MainActivity extends AppCompatActivity
                 fileExtension = "pdf";
                 website = getString(R.string.timetable_sms_link);
                 break;
+            case R.id.timetable_phd_pdf:
+                fileName = "timetable_phd_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_phd_link);
+                break;
             case R.id.acad_calendar_pdf:
                 fileName = "acad_calendar_pdf";
                 fileExtension = "pdf";
@@ -376,6 +381,11 @@ public class MainActivity extends AppCompatActivity
                 fileName = "timetable_sms_pdf";
                 fileExtension = "pdf";
                 website = getString(R.string.timetable_sms_link);
+                break;
+            case R.id.timetable_phd_pdf_force:
+                fileName = "timetable_phd_pdf";
+                fileExtension = "pdf";
+                website = getString(R.string.timetable_phd_link);
                 break;
             case R.id.acad_calendar_pdf_force:
                 fileName = "acad_calendar_pdf";
