@@ -13,9 +13,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-
-
-
         android:allowBackup="true"
         android:icon="@mipmap/iitbbs_logo"
         android:label="@string/app_name"
@@ -28,7 +25,7 @@
             android:name=".SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,6 +48,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD2_l2evFDVGOQXQEsjgvwYoGRY5QEua10" />
 
+        <activity android:name=".LostAndFoundRegistration"></activity>
     </application>
 
 </manifest>

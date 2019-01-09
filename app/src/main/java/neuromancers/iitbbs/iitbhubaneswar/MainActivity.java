@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -24,10 +22,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.graphics.Color;
 import android.os.Handler;
-
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.SupportMapFragment;
 
 
 public class MainActivity extends AppCompatActivity
@@ -174,6 +168,14 @@ public class MainActivity extends AppCompatActivity
                     ft.commit();
                 }
                 break;
+            case R.id.lost_and_found:
+                Fragment lostAndFound = new LostAndFoundRegistration();
+                if (lostAndFound != null) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction ft = fragmentManager.beginTransaction();
+                    ft.replace(R.id.content_frame, lostAndFound);
+                    ft.commit();
+                }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -436,4 +438,6 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.replace(R.id.content_frame, navFragment);
         fragmentTransaction.commit();
     }
+
+
 }

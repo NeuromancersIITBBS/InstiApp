@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 public class Erp extends Fragment {
-    private String webaddr = "http://www.iitbbs.ac.in/erp_portal.php";
+    private String webaddr = "http://erp.iitbbs.ac.in/";
 
     public WebView mwebview;
     ProgressBar bar;
