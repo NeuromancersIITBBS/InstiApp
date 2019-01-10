@@ -54,7 +54,7 @@ public class LostAndFoundRegistration extends Fragment {
                                 }
                             }
                             else
-                                Toast.makeText(getActivity(),"Registration Failed",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(),"Registration Failed, enter valid email id and password with more than 6 characters",Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
