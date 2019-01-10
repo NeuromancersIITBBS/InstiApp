@@ -3,6 +3,7 @@ package neuromancers.iitbbs.iitbhubaneswar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.method.PasswordTransformationMethod;
@@ -26,6 +27,7 @@ public class LostAndFoundRegistration extends Fragment {
     private Button regButton,regBridge;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_reg_lost_and_found, container, false);
@@ -33,6 +35,7 @@ public class LostAndFoundRegistration extends Fragment {
         getActivity().setTitle("Lost and Found");
         setUIRegViews(v);
         firebaseAuth = FirebaseAuth.getInstance();
+
         regPassword.setTransformationMethod(new AsteriskPasswordTransformationMethod());
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
