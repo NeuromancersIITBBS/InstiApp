@@ -54,6 +54,11 @@
                 android:id="@+id/nav_transport"
                 android:icon="@drawable/icon_transport"
                 android:title="Transport" />
+            <item
+                android:id="@+id/lost_and_found"
+                android:icon="@drawable/icon_pdf"
+                android:title="Lost and Found Items"
+                />
         </menu>
     </item>
 
