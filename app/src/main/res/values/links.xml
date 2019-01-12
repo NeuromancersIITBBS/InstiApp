@@ -2,15 +2,16 @@
 <resources>
     <string name="transport_link">http://www.iitbbs.ac.in/transportation-fle/transport_1546467612.pdf</string>
 
-    <string name="timetable_freshers_link">http://www.iitbbs.ac.in/images/1_%20B_Tech_%201st%20year.pdf</string>
-    <string name="timetable_sbs_link">http://www.iitbbs.ac.in/images/8_%20SBS_Rev_1(1).pdf</string>
-    <string name="timetable_seocs_link">http://www.iitbbs.ac.in/images/9_%20SEOCS.pdf</string>
-    <string name="timetable_ses_ece_link">http://www.iitbbs.ac.in/images/3_%20SES_ECE_Rev_2.pdf</string>
-    <string name="timetable_ses_cse_link">http://www.iitbbs.ac.in/images/Time%20Table%20Spring%202018_030119_current.pdf</string>
-    <string name="timetable_ses_ee_link">http://www.iitbbs.ac.in/images/4_%20SES_EE_Rev_1.pdf</string>
-    <string name="timetable_sif_link">http://www.iitbbs.ac.in/images/2_%20SIF_Rev_1.pdf</string>
-    <string name="timetable_smmme_link">http://www.iitbbs.ac.in/images/7_%20SMMME_Rev_1.pdf</string>
-    <string name="timetable_sms_link">http://www.iitbbs.ac.in/images/6_%20SMS_Rev_1.pdf</string>
+    <string name="timetable_freshers_link">http://www.iitbbs.ac.in/images/1_%201st%20Year%20Final(1).pdf</string>
+    <string name="timetable_sbs_link">http://www.iitbbs.ac.in/images/8_%20SBS%20Final.pdf</string>
+    <string name="timetable_seocs_link">http://www.iitbbs.ac.in/images/9_%20SEOCS%20Final.pdf</string>
+    <string name="timetable_ses_ece_link">http://www.iitbbs.ac.in/images/3_%20SES%20ECE%20Final(1).pdf</string>
+    <string name="timetable_ses_cse_link">http://www.iitbbs.ac.in/images/5_%20SES%20CSE%20Final.pdf</string>
+    <string name="timetable_ses_ee_link">http://www.iitbbs.ac.in/images/4_%20SES%20EE%20Final.pdf</string>
+    <string name="timetable_sif_link">http://www.iitbbs.ac.in/images/2_%20SIF%20Final.pdf</string>
+    <string name="timetable_smmme_link">http://www.iitbbs.ac.in/images/7_%20SMMME%20Final.pdf</string>
+    <string name="timetable_sms_link">http://www.iitbbs.ac.in/images/6_%20SMS%20Final(1).pdf</string>
+    <string name="timetable_phd_link">http://www.iitbbs.ac.in/images/10_%20Ph_D_%20Final.pdf</string>
 
     <string name="acad_calendar_link">http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19.pdf</string>
     <string name="monthly_autumn_link">http://www.iitbbs.ac.in/curriculum_doc/Academic-Calendar-2018-19-Autumn.pdf</string>
