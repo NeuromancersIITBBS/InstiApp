@@ -36,6 +36,10 @@
                 android:id="@+id/nav_regulations"
                 android:icon="@drawable/icon_regulations"
                 android:title="Regulations" />
+            <item
+                android:id="@+id/nav_erp"
+                android:icon="@drawable/icon_calendar"
+                android:title="ERP"/>
         </menu>
     </item>
 
