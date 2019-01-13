@@ -49,7 +49,7 @@
                     android:text="Transport Schedule" />
 
                 <ImageButton
-                    android:id="@+id/transport_force"
+                    android:id="@+id/transport_pdf_force"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
@@ -96,8 +96,5 @@
                 app:srcCompat="@drawable/icon_net" />
 
         </LinearLayout>
-
-
     </LinearLayout>
-
 </RelativeLayout>
