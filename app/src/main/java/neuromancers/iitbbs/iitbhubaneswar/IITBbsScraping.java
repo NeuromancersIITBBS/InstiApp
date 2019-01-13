@@ -11,27 +11,17 @@ import android.widget.Toast;
 
 import com.tom_roush.pdfbox.pdmodel.PDDocument;
 
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.logging.Logger;
 
 public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
-
-    Logger logger = Logger.getLogger("InstiAppUtil Logger");
-
-    private String website = null;
+    private String link = null;
     private String fileName = null;
-    private String fileExtension = null;
+    private String fileExtension = "pdf";
     private ProgressBar progressBar = null;
     private boolean forceUpdate = false;
 
@@ -39,10 +29,9 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
     private Context context = null;
     private File file = null;
 
-    public IITBbsScraping(String website, String fileName, String fileExtension, ProgressBar progressBar, boolean forceUpdate) {
-        this.website = website;
+    public IITBbsScraping(String link, String fileName, ProgressBar progressBar, boolean forceUpdate) {
+        this.link = link;
         this.fileName = fileName;
-        this.fileExtension = fileExtension;
         this.progressBar = progressBar;
         this.forceUpdate = forceUpdate;
 
@@ -75,10 +64,10 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
         if (file.exists() && !forceUpdate) {
             startFileViewActivity(file, "application/" + fileExtension);
             return Integer.valueOf(1);
-        } else if (website.endsWith(".pdf")) {
-            return Integer.valueOf(downloadFile(website));
+        } else if (link.endsWith(".pdf")) {
+            return Integer.valueOf(downloadFile(link));
         } else {
-            return Integer.valueOf(scrape());
+            return -1;
         }
     }
 
@@ -94,37 +83,6 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
         context.startActivity(intent);
     }
 
-    public int scrape() {
-        Document document = null;
-        long startTime = System.nanoTime();
-        long endTime = startTime;
-        while ((endTime - startTime) / 1000000000 < timeout) {
-            try {
-                Connection connection = Jsoup.connect(website);
-                document = connection.get();
-                break;
-            } catch (IOException e) {
-                Toast.makeText(context, "Network Issues", Toast.LENGTH_SHORT).show();
-                logger.warning(e.getMessage());
-            }
-            endTime = System.nanoTime();
-        }
-
-        if (document != null) {
-            Elements anchorTags = document.getElementsByTag("a");
-            for (Element anchorTag : anchorTags) {
-                String href = anchorTag.attr("href");
-                if (href.endsWith(".pdf")) {
-                    String fileLink = "http://www.iitbbs.ac.in" + href.substring(2);
-
-                    return downloadFile(fileLink);
-                }
-            }
-        }
-
-        return -1;
-    }
-
     private int downloadFile(String fileLink) {
         try {
             URL link = new URL(fileLink);
@@ -137,10 +95,8 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
             return 0;
         } catch (MalformedURLException e) {
             Toast.makeText(context, "Malformed URL While Scraping", Toast.LENGTH_SHORT).show();
-            logger.warning("Malformed URL While Scraping");
         } catch (IOException e) {
             Toast.makeText(context, "Error Connecting To URL While Scraping", Toast.LENGTH_SHORT).show();
-            logger.warning("Error Connecting To URL While Scraping: " + e.getMessage());
         }
         return -1;
     }
