@@ -131,7 +131,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Fri"
+                        android:text="Sat"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -178,7 +178,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="14 February"
+                        android:text="4 March"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -188,7 +188,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Wed"
+                        android:text="Mon"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -235,7 +235,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="2 March"
+                        android:text="21 March"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -245,7 +245,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Fri"
+                        android:text="Thurs"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -292,7 +292,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="29 March"
+                        android:text="17 April"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -302,7 +302,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Thurs"
+                        android:text="Wed"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -350,7 +350,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="30 March"
+                        android:text="19 April"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -407,7 +407,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="30 April"
+                        android:text="18 May"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -417,7 +417,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Mon"
+                        android:text="Sat"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -464,7 +464,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="16 June"
+                        android:text="5 June"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -474,13 +474,13 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Sat"
+                        android:text="Wed"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
                 </TableRow>
 
-                <View
+                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginEnd="10dp"
@@ -511,7 +511,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Independence Day"
+                        android:text="Rath Yatra"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -521,7 +521,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="15 August"
+                        android:text="4 July"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -531,13 +531,13 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Wed"
+                        android:text="Thurs"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
                 </TableRow>
 
-                <View
+                  <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginEnd="10dp"
@@ -578,7 +578,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="22 August"
+                        android:text="12 August"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -588,7 +588,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Wed"
+                        android:text="Mon"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -625,7 +625,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Muharram"
+                        android:text="Independence Day"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -635,7 +635,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="21 September"
+                        android:text="15 August"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -645,13 +645,13 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Fri"
+                        android:text="Thurs"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
                 </TableRow>
 
-                <View
+                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginEnd="10dp"
@@ -682,7 +682,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Gandhiji's Birthday"
+                        android:text="Ganesh Chaturthi"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -692,7 +692,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="2 October"
+                        android:text="2 September"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -702,7 +702,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Tue"
+                        android:text="Mon"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -739,7 +739,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Dussehra"
+                        android:text="Muharram"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -749,7 +749,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="16-19 October"
+                        android:text="10 September"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -759,7 +759,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Tue-Fri"
+                        android:text="Tue"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -796,7 +796,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Diwali"
+                        android:text="Gandhiji's Birthday"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -806,7 +806,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="7 November"
+                        android:text="2 October"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -853,7 +853,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Id-e-milad"
+                        android:text="Dussehra"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -863,7 +863,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="21 November"
+                        android:text="7-8 October"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -873,7 +873,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Wed"
+                        android:text="Mon-Tue"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -910,7 +910,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Guru Nanak’s Birthday"
+                        android:text="Diwali"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -920,7 +920,7 @@
                         android:layout_span="1"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="23 November"
+                        android:text="27 November"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -930,7 +930,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Fri"
+                        android:text="Sun"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -967,7 +967,121 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Christmas"
+                        android:text="Id-e-milad"
+                        android:textColor="#000000"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="10 November"
+                        android:textColor="#000000"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="3"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Sun"
+                        android:textColor="#000000"
+                        android:textSize="11dp" />
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="?android:attr/listDivider"
+                    android:visibility="visible" />
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_span="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="17"
+                        android:textColor="#000000"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="3"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Guru Nanak’s Birthday"
+                        android:textColor="#000000"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="12 November"
+                        android:textColor="#000000"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="3"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Tue"
+                        android:textColor="#000000"
+                        android:textSize="11dp" />
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="?android:attr/listDivider"
+                    android:visibility="visible" />
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_span="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="18"
+                        android:textColor="#000000"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="3"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Christmas Day"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
@@ -987,7 +1101,7 @@
                         android:layout_span="3"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Tue"
+                        android:text="Wed"
                         android:textColor="#000000"
                         android:textSize="11dp" />
 
