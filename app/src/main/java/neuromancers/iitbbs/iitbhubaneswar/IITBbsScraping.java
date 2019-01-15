@@ -5,10 +5,16 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Looper;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.tom_roush.pdfbox.pdmodel.PDDocument;
 
 import java.io.File;
@@ -17,20 +23,21 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.concurrent.Semaphore;
 
 public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
-    private String link = null;
     private String fileName = null;
     private String fileExtension = "pdf";
     private ProgressBar progressBar = null;
     private boolean forceUpdate = false;
+    private String link = null;
 
-    private long timeout = 5;
     private Context context = null;
     private File file = null;
 
-    public IITBbsScraping(String link, String fileName, ProgressBar progressBar, boolean forceUpdate) {
-        this.link = link;
+    private final Semaphore semaphore = new Semaphore(0);
+
+    public IITBbsScraping(String fileName, ProgressBar progressBar, boolean forceUpdate) {
         this.fileName = fileName;
         this.progressBar = progressBar;
         this.forceUpdate = forceUpdate;
@@ -45,9 +52,7 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected void onPostExecute(Integer result) {
-        if (result.intValue() == -1) {
-            Toast.makeText(context, "Error downloading the file - try again later", Toast.LENGTH_SHORT).show();
-        } else if (result.intValue() == 0) {
+        if (result == 0) {
             file = getFile(fileName + "." + fileExtension);
             startFileViewActivity(file, "application/" + fileExtension);
         }
@@ -56,19 +61,37 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected Integer doInBackground(Void... voids) {
-        if(Looper.myLooper() == null) { // check already Looper is associated or not.
+        if (Looper.myLooper() == null) { // check already Looper is associated or not.
             Looper.prepare(); // No Looper is defined So define a new one
         }
 
         file = getFile(fileName + "." + fileExtension);
         if (file.exists() && !forceUpdate) {
-            startFileViewActivity(file, "application/" + fileExtension);
-            return Integer.valueOf(1);
-        } else if (link.endsWith(".pdf")) {
-            return Integer.valueOf(downloadFile(link));
-        } else {
-            return -1;
+            return 0;
         }
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference(fileName + "_link");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                link = (String) dataSnapshot.getValue();
+                semaphore.release();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        try {
+            semaphore.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return downloadFile(link);
     }
 
     private File getFile(String fileName) {
@@ -97,6 +120,8 @@ public class IITBbsScraping extends AsyncTask<Void, Void, Integer> {
             Toast.makeText(context, "Malformed URL While Scraping", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Toast.makeText(context, "Error Connecting To URL While Scraping", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(context, "Error downloading the file - try again later", Toast.LENGTH_SHORT).show();
         }
         return -1;
     }

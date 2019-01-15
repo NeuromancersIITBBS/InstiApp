@@ -200,83 +200,67 @@ public class MainActivity extends AppCompatActivity
      * @param view
      */
     public void downloadFromWeb(View view) {
-        String file = "";
+        String fileName = "";
 
         switch (view.getId()) {
             case R.id.transport_pdf:
-                file = "transport";
+                fileName = "transport";
                 break;
             case R.id.timetable_freshers_pdf:
-                file = "timetable_freshers";
+                fileName = "timetable_freshers";
                 break;
             case R.id.timetable_sbs_pdf:
-                file = "timetable_sbs";
+                fileName = "timetable_sbs";
                 break;
             case R.id.timetable_seocs_pdf:
-                file = "timetable_seocs";
+                fileName = "timetable_seocs";
                 break;
             case R.id.timetable_ses_ece_pdf:
-                file = "timetable_ses_ece";
+                fileName = "timetable_ses_ece";
                 break;
             case R.id.timetable_ses_cse_pdf:
-                file = "timetable_ses_cse";
+                fileName = "timetable_ses_cse";
                 break;
             case R.id.timetable_ses_ee_pdf:
-                file = "timetable_ses_ee";
+                fileName = "timetable_ses_ee";
                 break;
             case R.id.timetable_sif_pdf:
-                file = "timetable_sif";
+                fileName = "timetable_sif";
                 break;
             case R.id.timetable_smmme_pdf:
-                file = "timetable_smmme";
+                fileName = "timetable_smmme";
                 break;
             case R.id.timetable_sms_pdf:
-                file = "timetable_sms";
+                fileName = "timetable_sms";
                 break;
             case R.id.timetable_phd_pdf:
-                file = "timetable_phd";
+                fileName = "timetable_phd";
                 break;
             case R.id.acad_calendar_pdf:
-                file = "acad_calendar";
+                fileName = "acad_calendar";
                 break;
             case R.id.monthly_autumn_pdf:
-                file = "monthly_autumn";
+                fileName = "monthly_autumn";
                 break;
             case R.id.monthly_spring_pdf:
-                file = "monthly_spring";
+                fileName = "monthly_spring";
                 break;
             case R.id.regulations_btech_pdf:
-                file = "regulations_btech";
+                fileName = "regulations_btech";
                 break;
             case R.id.regulations_msc_pdf:
-                file = "regulations_msc";
+                fileName = "regulations_msc";
                 break;
             case R.id.regulations_mtech_pdf:
-                file = "regulations_mtech";
+                fileName = "regulations_mtech";
                 break;
             case R.id.regulations_phd_pdf:
-                file = "regulations_phd";
+                fileName = "regulations_phd";
                 break;
         }
 
-        final String fileName = file;
-
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference(file+"_link");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String link = (String) dataSnapshot.getValue();
-
-                IITBbsScraping iitBbsScraping = new IITBbsScraping(link, fileName, progressBar, true);
-                iitBbsScraping.execute();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+        IITBbsScraping iitBbsScraping = new IITBbsScraping(fileName, progressBar, true);
+        iitBbsScraping.execute();
     }
 
     /**
@@ -285,83 +269,67 @@ public class MainActivity extends AppCompatActivity
      * @param view
      */
     public void forceDownloadFromWeb(View view) {
-        String file = "";
+        String fileName = "";
 
         switch (view.getId()) {
             case R.id.transport_pdf_force:
-                file = "transport";
+                fileName = "transport";
                 break;
             case R.id.timetable_freshers_pdf_force:
-                file = "timetable_freshers";
+                fileName = "timetable_freshers";
                 break;
             case R.id.timetable_sbs_pdf_force:
-                file = "timetable_sbs";
+                fileName = "timetable_sbs";
                 break;
             case R.id.timetable_seocs_pdf_force:
-                file = "timetable_seocs";
+                fileName = "timetable_seocs";
                 break;
             case R.id.timetable_ses_ece_pdf_force:
-                file = "timetable_ses_ece";
+                fileName = "timetable_ses_ece";
                 break;
             case R.id.timetable_ses_cse_pdf_force:
-                file = "timetable_ses_cse";
+                fileName = "timetable_ses_cse";
                 break;
             case R.id.timetable_ses_ee_pdf_force:
-                file = "timetable_ses_ee";
+                fileName = "timetable_ses_ee";
                 break;
             case R.id.timetable_sif_pdf_force:
-                file = "timetable_sif";
+                fileName = "timetable_sif";
                 break;
             case R.id.timetable_smmme_pdf_force:
-                file = "timetable_smmme";
+                fileName = "timetable_smmme";
                 break;
             case R.id.timetable_sms_pdf_force:
-                file = "timetable_sms";
+                fileName = "timetable_sms";
                 break;
             case R.id.timetable_phd_pdf_force:
-                file = "timetable_phd";
+                fileName = "timetable_phd";
                 break;
             case R.id.acad_calendar_pdf_force:
-                file = "acad_calendar";
+                fileName = "acad_calendar";
                 break;
             case R.id.monthly_autumn_pdf_force:
-                file = "monthly_autumn";
+                fileName = "monthly_autumn";
                 break;
             case R.id.monthly_spring_pdf_force:
-                file = "monthly_spring";
+                fileName = "monthly_spring";
                 break;
             case R.id.regulations_btech_pdf_force:
-                file = "regulations_btech";
+                fileName = "regulations_btech";
                 break;
             case R.id.regulations_msc_pdf_force:
-                file = "regulations_msc";
+                fileName = "regulations_msc";
                 break;
             case R.id.regulations_mtech_pdf_force:
-                file = "regulations_mtech";
+                fileName = "regulations_mtech";
                 break;
             case R.id.regulations_phd_pdf_force:
-                file = "regulations_phd";
+                fileName = "regulations_phd";
                 break;
         }
 
-        final String fileName = file;
-
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference(file+"_link");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String link = (String) dataSnapshot.getValue();
-
-                IITBbsScraping iitBbsScraping = new IITBbsScraping(link, fileName, progressBar, true);
-                iitBbsScraping.execute();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+        IITBbsScraping iitBbsScraping = new IITBbsScraping(fileName, progressBar, true);
+        iitBbsScraping.execute();
     }
 
     /**
