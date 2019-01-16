@@ -17,6 +17,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +39,15 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import static android.support.v4.content.ContextCompat.checkSelfPermission;
@@ -53,17 +63,47 @@ public class NavFragment extends Fragment {
 
     private FusedLocationProviderClient fusedLocationProviderClient;
 
-    public GoogleMap getGoogleMap() {
-        return googleMap;
-    }
-
     public void setNewLayout(int navLayout) {
         this.navLayout = navLayout;
     }
 
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = layoutInflater.inflate(navLayout, container, false);
+        final View rootView = layoutInflater.inflate(navLayout, container, false);
+
+        if (navLayout == R.layout.gymkhana) {
+            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+            DatabaseReference databaseReference = firebaseDatabase.getReference("gymkhana_office_bearers/");
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    List<String> officeBearersStringList = new ArrayList<>();
+//                    Iterable<DataSnapshot> officeBearersObjectList = dataSnapshot.getChildren();
+//                    for (DataSnapshot child : officeBearersObjectList) {
+//                        officeBearersStringList.add(child.getKey());
+//                    }
+
+                    officeBearersStringList.addAll(Arrays.asList(new String[]{
+                            "president", "treasurer", "vpresident","fasng", "fasnt",
+                            "fasnc", "gsecsports", "gsecsnt", "gseccul",
+                            "secysnt", "secyweb", "secyrobotics", "photosoc", "secyprogsoc",
+                            "secysfs", "secylitsoc", "secycinesoc", "secymnd", "secyfinearts",
+                            "secydrams", "secyfootball", "secyathletics", "secyindoor",
+                            "secysasports", "secycricket"
+                    }));
+
+                    RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.office_bearers_recycler_view);
+                    GymkhanaAdapter gymkhanaAdapter = new GymkhanaAdapter(officeBearersStringList, rootView.getContext());
+                    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(rootView.getContext());
+                    recyclerView.setLayoutManager(mLayoutManager);
+                    recyclerView.setAdapter(gymkhanaAdapter);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+        }
 
         if (navLayout == R.layout.map) {
             fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
@@ -139,11 +179,10 @@ public class NavFragment extends Fragment {
 
                             if (!gps_enabled)
                                 Snackbar.make(getView(), "Enable Location Services", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-//                                Toast.makeText(getActivity(), "Enable Location Services", Toast.LENGTH_LONG).show();
+                                        .setAction("Action", null).show();
                             else if (!network_enabled)
                                 Snackbar.make(getView(), "Enable Network Services", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                                        .setAction("Action", null).show();
 
                             return false;
                         }
