@@ -78,10 +78,19 @@ public class NavFragment extends Fragment {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     List<String> officeBearersStringList = new ArrayList<>();
-                    Iterable<DataSnapshot> officeBearersObjectList = dataSnapshot.getChildren();
-                    for (DataSnapshot child : officeBearersObjectList) {
-                        officeBearersStringList.add(child.getKey());
-                    }
+//                    Iterable<DataSnapshot> officeBearersObjectList = dataSnapshot.getChildren();
+//                    for (DataSnapshot child : officeBearersObjectList) {
+//                        officeBearersStringList.add(child.getKey());
+//                    }
+
+                    officeBearersStringList.addAll(Arrays.asList(new String[]{
+                            "president", "treasurer", "vpresident","facadsports", "facadsnt",
+                            "facadcul", "gsecsports", "gsecsnt", "gseccul",
+                            "secysnt", "secyweb", "secyrobotics", "photosoc", "secyprogsoc",
+                            "secysfs", "secylitsoc", "secycinesoc", "secymnd", "secyfinearts",
+                            "secydrams", "secyfootball", "secyathletics", "secyindoor",
+                            "secysasports", "secycricket"
+                    }));
 
                     RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.office_bearers_recycler_view);
                     GymkhanaAdapter gymkhanaAdapter = new GymkhanaAdapter(officeBearersStringList, rootView.getContext());
