@@ -46,6 +46,8 @@ public class Erp extends Fragment {
         } );
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setDisplayZoomControls(false);
         webview.setVerticalScrollBarEnabled( false );
         webview.loadUrl( webaddr );
         bar.setProgress( 0 );
