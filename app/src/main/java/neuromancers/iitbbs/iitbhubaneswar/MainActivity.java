@@ -4,11 +4,12 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
-import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -22,12 +23,12 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.graphics.Color;
-import android.os.Handler;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity
@@ -47,15 +48,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -209,115 +201,65 @@ public class MainActivity extends AppCompatActivity
      */
     public void downloadFromWeb(View view) {
         String fileName = "";
-        String fileExtension = "";
-        String website = "";
 
         switch (view.getId()) {
             case R.id.transport_pdf:
-                fileName = "transport_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.transport_link);
+                fileName = "transport";
                 break;
-            //case R.id.transport_xls:
-            //application/vnd.ms-excel
-//                String fileName = "transport";
-//                String fileExtension = "xls";
-//                String website = "http://www.iitbbs.ac.in/transportation.php";
-//
-//                ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-//                progressBar.setVisibility(View.VISIBLE);
-//                IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar);
-//                iitBbsScraping.execute();
-            //    break;
             case R.id.timetable_freshers_pdf:
-                fileName = "timetable_freshers_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_freshers_link);
+                fileName = "timetable_freshers";
                 break;
             case R.id.timetable_sbs_pdf:
-                fileName = "timetable_sbs_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sbs_link);
+                fileName = "timetable_sbs";
                 break;
             case R.id.timetable_seocs_pdf:
-                fileName = "timetable_seocs_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_seocs_link);
+                fileName = "timetable_seocs";
                 break;
             case R.id.timetable_ses_ece_pdf:
-                fileName = "timetable_ses_ece_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_ece_link);
+                fileName = "timetable_ses_ece";
                 break;
             case R.id.timetable_ses_cse_pdf:
-                fileName = "timetable_ses_cse_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_cse_link);
+                fileName = "timetable_ses_cse";
                 break;
             case R.id.timetable_ses_ee_pdf:
-                fileName = "timetable_ses_ee_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_ee_link);
+                fileName = "timetable_ses_ee";
                 break;
             case R.id.timetable_sif_pdf:
-                fileName = "timetable_sif_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sif_link);
+                fileName = "timetable_sif";
                 break;
             case R.id.timetable_smmme_pdf:
-                fileName = "timetable_smmme_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_smmme_link);
+                fileName = "timetable_smmme";
                 break;
             case R.id.timetable_sms_pdf:
-                fileName = "timetable_sms_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sms_link);
+                fileName = "timetable_sms";
                 break;
             case R.id.timetable_phd_pdf:
-                fileName = "timetable_phd_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_phd_link);
+                fileName = "timetable_phd";
                 break;
             case R.id.acad_calendar_pdf:
-                fileName = "acad_calendar_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.acad_calendar_link);
+                fileName = "acad_calendar";
                 break;
             case R.id.monthly_autumn_pdf:
-                fileName = "monthly_autumn_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.monthly_autumn_link);
+                fileName = "monthly_autumn";
                 break;
             case R.id.monthly_spring_pdf:
-                fileName = "monthly_spring_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.monthly_spring_link);
+                fileName = "monthly_spring";
                 break;
-
             case R.id.regulations_btech_pdf:
-                fileName = "regulations_btech_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.regulations_btech_link);
+                fileName = "regulations_btech";
                 break;
             case R.id.regulations_msc_pdf:
-                fileName = "regulations_msc_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.regulations_msc_link);
+                fileName = "regulations_msc";
                 break;
             case R.id.regulations_mtech_pdf:
-                fileName = "regulations_mtech_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.regulations_mtech_link);
+                fileName = "regulations_mtech";
                 break;
             case R.id.regulations_phd_pdf:
-                fileName = "regulations_phd_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.regulations_phd_link);
+                fileName = "regulations_phd";
                 break;
         }
 
-        IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar, false);
+        IITBbsScraping iitBbsScraping = new IITBbsScraping(fileName, progressBar, true);
         iitBbsScraping.execute();
     }
 
@@ -328,107 +270,66 @@ public class MainActivity extends AppCompatActivity
      */
     public void forceDownloadFromWeb(View view) {
         String fileName = "";
-        String fileExtension = "";
-        String website = "";
 
         switch (view.getId()) {
             case R.id.transport_pdf_force:
-                fileName = "transport_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.transport_link);
+                fileName = "transport";
                 break;
             case R.id.timetable_freshers_pdf_force:
-                fileName = "timetable_freshers_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_freshers_link);
+                fileName = "timetable_freshers";
                 break;
             case R.id.timetable_sbs_pdf_force:
-                fileName = "timetable_sbs_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sbs_link);
+                fileName = "timetable_sbs";
                 break;
             case R.id.timetable_seocs_pdf_force:
-                fileName = "timetable_seocs_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_seocs_link);
+                fileName = "timetable_seocs";
                 break;
             case R.id.timetable_ses_ece_pdf_force:
-                fileName = "timetable_ses_ece_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_ece_link);
+                fileName = "timetable_ses_ece";
                 break;
             case R.id.timetable_ses_cse_pdf_force:
-                fileName = "timetable_ses_cse_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_cse_link);
+                fileName = "timetable_ses_cse";
                 break;
             case R.id.timetable_ses_ee_pdf_force:
-                fileName = "timetable_ses_ee_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_ses_ee_link);
+                fileName = "timetable_ses_ee";
                 break;
             case R.id.timetable_sif_pdf_force:
-                fileName = "timetable_sif_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sif_link);
+                fileName = "timetable_sif";
                 break;
             case R.id.timetable_smmme_pdf_force:
-                fileName = "timetable_smmme_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_smmme_link);
+                fileName = "timetable_smmme";
                 break;
             case R.id.timetable_sms_pdf_force:
-                fileName = "timetable_sms_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_sms_link);
+                fileName = "timetable_sms";
                 break;
             case R.id.timetable_phd_pdf_force:
-                fileName = "timetable_phd_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.timetable_phd_link);
+                fileName = "timetable_phd";
                 break;
             case R.id.acad_calendar_pdf_force:
-                fileName = "acad_calendar_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.acad_calendar_link);
+                fileName = "acad_calendar";
                 break;
             case R.id.monthly_autumn_pdf_force:
-                fileName = "monthly_autumn_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.monthly_autumn_link);
+                fileName = "monthly_autumn";
                 break;
             case R.id.monthly_spring_pdf_force:
-                fileName = "monthly_spring_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.monthly_spring_link);
+                fileName = "monthly_spring";
                 break;
-
             case R.id.regulations_btech_pdf_force:
-                fileName = "regulations_btech_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.regulations_btech_link);
+                fileName = "regulations_btech";
                 break;
             case R.id.regulations_msc_pdf_force:
-                fileName = "regulations_msc_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.regulations_msc_link);
+                fileName = "regulations_msc";
                 break;
             case R.id.regulations_mtech_pdf_force:
-                fileName = "regulations_mtech_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.regulations_mtech_link);
+                fileName = "regulations_mtech";
                 break;
             case R.id.regulations_phd_pdf_force:
-                fileName = "regulations_phd_pdf";
-                fileExtension = "pdf";
-                website = getString(R.string.regulations_phd_link);
+                fileName = "regulations_phd";
                 break;
         }
 
-        if (!website.isEmpty()) {
-            IITBbsScraping iitBbsScraping = new IITBbsScraping(website, fileName, fileExtension, progressBar, true);
-            iitBbsScraping.execute();
-        }
+        IITBbsScraping iitBbsScraping = new IITBbsScraping(fileName, progressBar, true);
+        iitBbsScraping.execute();
     }
 
     /**

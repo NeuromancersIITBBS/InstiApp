@@ -96,8 +96,5 @@
                 app:srcCompat="@drawable/icon_net" />
 
         </LinearLayout>
-
-
     </LinearLayout>
-
 </RelativeLayout>

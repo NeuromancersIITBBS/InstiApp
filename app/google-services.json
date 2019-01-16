@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "698273965080",
+    "firebase_url": "https://iit-bhubaneswar-90859.firebaseio.com",
+    "project_id": "iit-bhubaneswar-90859",
+    "storage_bucket": "iit-bhubaneswar-90859.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698273965080:android:7d1b5377adfbda55",
+        "android_client_info": {
+          "package_name": "neuromancers.iitbbs.iitbhubaneswar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698273965080-23l2v864pgo9ctbcgoksie403t1uirtu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "neuromancers.iitbbs.iitbhubaneswar",
+            "certificate_hash": "e9c8760e8c3a65a7a33830baa3c69ed65d20daf7"
+          }
+        },
+        {
+          "client_id": "698273965080-67jcdbraf1qtp8r27insrbfmpsa98lri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN_3fimbXcJFolgeS7-712rG1Xr3l24W8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698273965080-67jcdbraf1qtp8r27insrbfmpsa98lri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
