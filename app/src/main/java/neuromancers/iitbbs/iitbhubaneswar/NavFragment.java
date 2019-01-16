@@ -84,8 +84,8 @@ public class NavFragment extends Fragment {
 //                    }
 
                     officeBearersStringList.addAll(Arrays.asList(new String[]{
-                            "president", "treasurer", "vpresident","facadsports", "facadsnt",
-                            "facadcul", "gsecsports", "gsecsnt", "gseccul",
+                            "president", "treasurer", "vpresident","fasng", "fasnt",
+                            "fasnc", "gsecsports", "gsecsnt", "gseccul",
                             "secysnt", "secyweb", "secyrobotics", "photosoc", "secyprogsoc",
                             "secysfs", "secylitsoc", "secycinesoc", "secymnd", "secyfinearts",
                             "secydrams", "secyfootball", "secyathletics", "secyindoor",
