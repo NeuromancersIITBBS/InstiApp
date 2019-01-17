@@ -16,17 +16,21 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.PopupOverlay">
-
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end"
-                android:indeterminateTint="@android:color/white"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp" />
+      
         </android.support.v7.widget.Toolbar>
+        
+            <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="-3dp"
+            android:background="#1976d2"
+            android:indeterminate="true"
+            android:visibility="visible"
+            android:progress="20"
+            />
 
     </android.support.design.widget.AppBarLayout>
 
