@@ -45,10 +45,10 @@
 
     <item android:title="Extras">
         <menu>
-            <!--<item-->
-                <!--android:id="@+id/nav_messMenu"-->
-                <!--android:icon="@drawable/icon_mess_menu"-->
-                <!--android:title="Mess Menu" />-->
+            <item
+                android:id="@+id/nav_messMenu"
+                android:icon="@drawable/icon_mess_menu"
+                android:title="Mess Menu" />
 
             <item
                 android:id="@+id/nav_transport"

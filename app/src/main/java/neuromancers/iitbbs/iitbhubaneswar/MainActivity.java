@@ -134,10 +134,10 @@ public class MainActivity extends AppCompatActivity
                 setTitle("Academic Calendar");
                 setNavFragment(R.layout.calendar);
                 break;
-//            case R.id.nav_messMenu:
-//                setTitle("Mess Menu");
-//                setNavFragment(R.layout.mess_menu);
-//                break;
+            case R.id.nav_messMenu:
+                setTitle("Mess Menu");
+                setNavFragment(R.layout.mess_menu);
+                break;
             case R.id.nav_transport:
                 setTitle("Transportation");
                 setNavFragment(R.layout.transport);
@@ -250,6 +250,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.regulations_phd_pdf:
                 fileName = "regulations_phd";
                 break;
+            case R.id.mess_menu_pdf:
+                fileName = "mess_menu";
+                break;
         }
 
         IITBbsScraping iitBbsScraping = new IITBbsScraping(fileName, progressBar, true);
@@ -318,6 +321,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.regulations_phd_pdf_force:
                 fileName = "regulations_phd";
+                break;
+            case R.id.mess_menu_pdf_force:
+                fileName = "mess_menu";
                 break;
         }
 

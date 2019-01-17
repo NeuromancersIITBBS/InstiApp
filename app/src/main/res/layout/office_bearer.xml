@@ -65,15 +65,15 @@
 
                     <ImageView
                         android:id="@+id/email"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_margin="5dp"
                         app:srcCompat="@drawable/icon_mail" />
 
                     <ImageView
                         android:id="@+id/contact"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_margin="5dp"
                         app:srcCompat="@drawable/icon_contact" />
                 </LinearLayout>
