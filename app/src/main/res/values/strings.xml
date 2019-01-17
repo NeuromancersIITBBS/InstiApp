@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Gymkhana:IIT Bhubaneswar</string>
+    <string name="app_name">Gymkhana, IIT Bhubaneswar</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Gymkhana:IIT Bhubaneswar</string>
+    <string name="nav_header_title">Gymkhana, IIT Bhubaneswar</string>
     <string name="nav_header_subtitle">www.iitbbs.ac.in</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
