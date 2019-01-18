@@ -8,6 +8,37 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:698273965080:android:62389ca4e59f275a",
+        "android_client_info": {
+          "package_name": "iitbbs.iitbhubaneswar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698273965080-67jcdbraf1qtp8r27insrbfmpsa98lri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN_3fimbXcJFolgeS7-712rG1Xr3l24W8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:698273965080:android:7d1b5377adfbda55",
         "android_client_info": {
           "package_name": "neuromancers.iitbbs.iitbhubaneswar"

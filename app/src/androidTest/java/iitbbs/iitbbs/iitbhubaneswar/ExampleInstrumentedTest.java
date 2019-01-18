@@ -1,4 +1,4 @@
-package neuromancers.iitbbs.iitbhubaneswar;
+package iitbbs.iitbhubaneswar;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("neuromancers.iitbbs.iitbhubaneswar", appContext.getPackageName());
+        assertEquals("iitbbs.iitbhubaneswar", appContext.getPackageName());
     }
 }

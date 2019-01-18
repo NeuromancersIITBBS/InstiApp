@@ -1,4 +1,4 @@
-package neuromancers.iitbbs.iitbhubaneswar;
+package iitbbs.iitbhubaneswar;
 
 import android.content.Context;
 import android.content.Intent;
