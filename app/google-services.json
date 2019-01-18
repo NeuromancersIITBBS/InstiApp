@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "411140875983",
-    "firebase_url": "https://instiapp-7cff4.firebaseio.com",
-    "project_id": "instiapp-7cff4",
-    "storage_bucket": "instiapp-7cff4.appspot.com"
+    "project_number": "698273965080",
+    "firebase_url": "https://iit-bhubaneswar-90859.firebaseio.com",
+    "project_id": "iit-bhubaneswar-90859",
+    "storage_bucket": "iit-bhubaneswar-90859.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:411140875983:android:7d1b5377adfbda55",
+        "mobilesdk_app_id": "1:698273965080:android:62389ca4e59f275a",
         "android_client_info": {
           "package_name": "neuromancers.iitbbs.iitbhubaneswar"
         }
       },
       "oauth_client": [
         {
-          "client_id": "411140875983-mk9kkq01qhine99nht3do5a5kaots4mn.apps.googleusercontent.com",
+          "client_id": "698273965080-67jcdbraf1qtp8r27insrbfmpsa98lri.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBnxurOlNMglBGZYfHDb2kc9v8Zz9B03_A"
+          "current_key": "AIzaSyCN_3fimbXcJFolgeS7-712rG1Xr3l24W8"
         }
       ],
       "services": {
