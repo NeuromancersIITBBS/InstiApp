@@ -10,10 +10,18 @@
       "client_info": {
         "mobilesdk_app_id": "1:698273965080:android:62389ca4e59f275a",
         "android_client_info": {
-          "package_name": "neuromancers.iitbbs.iitbhubaneswar"
+          "package_name": "iitbbs.iitbhubaneswar"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "698273965080-m41hra2tqd49qmg45ek1j2e58e2hdmn5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "iitbbs.iitbhubaneswar",
+            "certificate_hash": "af0850139cac1bed5aad61d25ff2174578df5dca"
+          }
+        },
         {
           "client_id": "698273965080-67jcdbraf1qtp8r27insrbfmpsa98lri.apps.googleusercontent.com",
           "client_type": 3
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698273965080-67jcdbraf1qtp8r27insrbfmpsa98lri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
