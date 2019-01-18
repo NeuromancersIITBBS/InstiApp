@@ -1,4 +1,4 @@
-package neuromancers.iitbbs.iitbhubaneswar;
+package iitbbs.iitbhubaneswar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -34,11 +34,11 @@ public class GymkhanaAdapter extends RecyclerView.Adapter<GymkhanaAdapter.Office
 
         public OfficeBearer(View view) {
             super(view);
-            post = (TextView) view.findViewById(R.id.post);
-            name = (TextView) view.findViewById(R.id.name);
-            contact = (ImageView) view.findViewById(R.id.contact);
-            email = (ImageView) view.findViewById(R.id.email);
-            pic = (ImageView) view.findViewById(R.id.pic);
+            post = (TextView) view.findViewById(iitbbs.iitbhubaneswar.R.id.post);
+            name = (TextView) view.findViewById(iitbbs.iitbhubaneswar.R.id.name);
+            contact = (ImageView) view.findViewById(iitbbs.iitbhubaneswar.R.id.contact);
+            email = (ImageView) view.findViewById(iitbbs.iitbhubaneswar.R.id.email);
+            pic = (ImageView) view.findViewById(iitbbs.iitbhubaneswar.R.id.pic);
         }
     }
 
@@ -50,7 +50,7 @@ public class GymkhanaAdapter extends RecyclerView.Adapter<GymkhanaAdapter.Office
     @Override
     public OfficeBearer onCreateViewHolder(ViewGroup parent, int viewType) {
         View officeBearer = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.office_bearer, parent, false);
+                .inflate(iitbbs.iitbhubaneswar.R.layout.office_bearer, parent, false);
 
         return new OfficeBearer(officeBearer);
     }

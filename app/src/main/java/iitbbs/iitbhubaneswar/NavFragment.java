@@ -1,4 +1,4 @@
-package neuromancers.iitbbs.iitbhubaneswar;
+package iitbbs.iitbhubaneswar;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -38,7 +38,6 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.Marker;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,7 +46,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 import static android.support.v4.content.ContextCompat.checkSelfPermission;
@@ -71,7 +69,7 @@ public class NavFragment extends Fragment {
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = layoutInflater.inflate(navLayout, container, false);
 
-        if (navLayout == R.layout.gymkhana) {
+        if (navLayout == iitbbs.iitbhubaneswar.R.layout.gymkhana) {
             FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
             DatabaseReference databaseReference = firebaseDatabase.getReference("gymkhana_office_bearers/");
             databaseReference.addValueEventListener(new ValueEventListener() {
@@ -92,7 +90,7 @@ public class NavFragment extends Fragment {
                             "secysasports", "secycricket"
                     }));
 
-                    RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.office_bearers_recycler_view);
+                    RecyclerView recyclerView = (RecyclerView) rootView.findViewById(iitbbs.iitbhubaneswar.R.id.office_bearers_recycler_view);
                     GymkhanaAdapter gymkhanaAdapter = new GymkhanaAdapter(officeBearersStringList, rootView.getContext());
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(rootView.getContext());
                     recyclerView.setLayoutManager(mLayoutManager);
@@ -105,10 +103,10 @@ public class NavFragment extends Fragment {
             });
         }
 
-        if (navLayout == R.layout.map) {
+        if (navLayout == iitbbs.iitbhubaneswar.R.layout.map) {
             fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
 
-            mapView = (MapView) rootView.findViewById(R.id.map_layout);
+            mapView = (MapView) rootView.findViewById(iitbbs.iitbhubaneswar.R.id.map_layout);
             mapView.onCreate(savedInstanceState);
 
             mapView.onResume();
