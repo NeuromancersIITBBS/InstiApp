@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -24,12 +25,12 @@ import java.util.List;
 
 /*This class displays the table of lost items requested/ lost and found items*/
 public class LostAndFoundTable extends Fragment {
-    private Button lostUpload;
-    private EditText lostInput;
-    private ListView lostOutput;
-    private FrameLayout framelayout;
-    private DatabaseReference databaseItems;
-    private List<LostAndFoundItems> lostItemList;
+    public Button lostUpload;
+    public EditText lostInput;
+    public ListView lostOutput;
+    public FrameLayout framelayout;
+    public DatabaseReference databaseItems;
+    public List<LostAndFoundItems> lostItemList;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_table_lost_and_found, container, false);
         framelayout = (FrameLayout) v.findViewById(R.id.framelayout);
@@ -63,7 +64,7 @@ public class LostAndFoundTable extends Fragment {
             }
 
             @Override
-            public void onCancelled( DatabaseError databaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
