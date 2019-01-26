@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.support.design.internal.NavigationMenu;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -255,7 +256,7 @@ public class MainActivity extends AppCompatActivity
                 break;
         }
 
-        IITBbsScraping iitBbsScraping = new IITBbsScraping(fileName, progressBar, true);
+        IITBbsScraping iitBbsScraping = new IITBbsScraping(fileName, progressBar, false);
         iitBbsScraping.execute();
     }
 
