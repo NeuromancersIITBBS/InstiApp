@@ -11,10 +11,10 @@ The IIT Bhubaneswar App
 - Public Holidays
 - Regulations
 - ERP integration
+- Students' Gymkhana section
 
 ## Features Coming Soon
 - Search and navigation in map
-- Students' Gymkhana section
 - News Feed
 - Dual color scheme for night mode
 
