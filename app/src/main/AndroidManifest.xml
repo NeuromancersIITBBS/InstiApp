@@ -2,20 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="iitbbs.iitbhubaneswar">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality.
-    -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-
-
-
         android:allowBackup="true"
         android:icon="@mipmap/iitbbs_logo"
         android:label="@string/app_name"
@@ -23,18 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Splash screen -->
         <activity
-            android:name="iitbbs.iitbhubaneswar.SplashScreen"
+            android:name="iitbbs.iitbhubaneswar.LoginScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="iitbbs.iitbhubaneswar.MainActivity"
             android:label="@string/app_name"
@@ -42,6 +31,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -52,5 +42,10 @@
             android:value="AIzaSyB8HZI31tIRDBrLlz_oR_vML67ioZgVIAI" />
 
     </application>
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

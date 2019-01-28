@@ -15,10 +15,6 @@ public class InstiAppUtil {
             /*
             swicth case fall-through cases
              */
-            case iitbbs.iitbhubaneswar.R.id.nav_header_name:
-            case iitbbs.iitbhubaneswar.R.id.nav_header_link:
-                url = "http://www.iitbbs.ac.in";
-                break;
             case iitbbs.iitbhubaneswar.R.id.transport_query_web:
                 url = "http://www.iitbbs.ac.in/transportation.php";
                 break;
