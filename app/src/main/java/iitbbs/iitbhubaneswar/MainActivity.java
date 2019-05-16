@@ -12,6 +12,8 @@ import android.os.StrictMode;
 import android.support.design.internal.NavigationMenu;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -49,8 +51,8 @@ public class MainActivity extends AppCompatActivity
 //        drawer.addDrawerListener(toggle);
 //        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(iitbbs.iitbhubaneswar.R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = (NavigationView) findViewById(iitbbs.iitbhubaneswar.R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         progressBar = (ProgressBar) findViewById(iitbbs.iitbhubaneswar.R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
@@ -61,17 +63,17 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         WebView webView = (WebView) this.findViewById( iitbbs.iitbhubaneswar.R.id.erp_webview );
-        DrawerLayout drawer = (DrawerLayout) findViewById(iitbbs.iitbhubaneswar.R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        }
+//        DrawerLayout drawer = (DrawerLayout) findViewById(iitbbs.iitbhubaneswar.R.id.drawer_layout);
+//        if (drawer.isDrawerOpen(GravityCompat.START)) {
+//            drawer.closeDrawer(GravityCompat.START);
+//        }
 
-        else if(findViewById(iitbbs.iitbhubaneswar.R.id.map_layout) != null)  {
+         if(findViewById(iitbbs.iitbhubaneswar.R.id.map_layout) != null)  {
             if(doublepress)
                 super.onBackPressed();
             else{
                 this.doublepress=true;
-                Snackbar snackbar = Snackbar.make( drawer,"Please press BACK again to exit", Snackbar.LENGTH_SHORT );
+                Snackbar snackbar = Snackbar.make(getCurrentFocus(),  "Please press BACK again to exit", Snackbar.LENGTH_SHORT );
                 snackbar.show();
                 View snackview = snackbar.getView();
                 TextView textView = snackview.findViewById(android.support.design.R.id.snackbar_text);
@@ -346,5 +348,9 @@ public class MainActivity extends AppCompatActivity
 
         fragmentTransaction.replace(iitbbs.iitbhubaneswar.R.id.content_frame, navFragment);
         fragmentTransaction.commit();
+    }
+    void openMap(View v){
+        setTitle("Campus Map");
+        setNavFragment(iitbbs.iitbhubaneswar.R.layout.map);
     }
 }

@@ -21,10 +21,10 @@
             app:backgroundTint="@color/colorPrimary"
             app:fabAlignmentMode="center"
             android:elevation="4dp"
-            app:hideOnScroll="true"/>
-            <!--app:navigationIcon="@drawable/round_menu_black_18dp"-->
-            <!--app:menu ="@menu/bottom"-->
+            app:hideOnScroll="true"
 
+            app:menu ="@menu/activity_main_drawer" />
+            <!--app:navigationIcon="@drawable/round_menu_black_18dp"-->
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -84,7 +84,7 @@
                     android:layout_margin="16dp"/>
 
             </androidx.appcompat.widget.Toolbar>
-            <ProgressBar
+            <androidx.core.widget.ContentLoadingProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
@@ -126,6 +126,7 @@
 
                     >
                     <TextView
+                        android:onClick="openMap"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Map"
