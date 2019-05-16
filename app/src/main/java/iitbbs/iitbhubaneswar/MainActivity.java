@@ -10,13 +10,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.support.design.internal.NavigationMenu;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,15 +39,15 @@ public class MainActivity extends AppCompatActivity
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
-        setContentView(iitbbs.iitbhubaneswar.R.layout.activity_main);
+        setContentView(R.layout.new_home);
         Toolbar toolbar = (Toolbar) findViewById(iitbbs.iitbhubaneswar.R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(iitbbs.iitbhubaneswar.R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, iitbbs.iitbhubaneswar.R.string.navigation_drawer_open, iitbbs.iitbhubaneswar.R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+//        DrawerLayout drawer = (DrawerLayout) findViewById(iitbbs.iitbhubaneswar.R.id.drawer_layout);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, iitbbs.iitbhubaneswar.R.string.navigation_drawer_open, iitbbs.iitbhubaneswar.R.string.navigation_drawer_close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(iitbbs.iitbhubaneswar.R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);

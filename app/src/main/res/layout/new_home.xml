@@ -21,10 +21,10 @@
             app:backgroundTint="@color/colorPrimary"
             app:fabAlignmentMode="center"
             android:elevation="4dp"
-            app:hideOnScroll="true"
-            app:navigationIcon="@drawable/round_menu_black_18dp"
-            app:menu ="@menu/bottom"
-            />
+            app:hideOnScroll="true"/>
+            <!--app:navigationIcon="@drawable/round_menu_black_18dp"-->
+            <!--app:menu ="@menu/bottom"-->
+
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -65,7 +65,7 @@
             android:id="@+id/toolbar"
             app:liftOnScroll="true">
 
-
+         <!--TODO id should fall under appbar or toolbar-->
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -84,6 +84,25 @@
                     android:layout_margin="16dp"/>
 
             </androidx.appcompat.widget.Toolbar>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-9dp"
+                android:layout_marginBottom="-8dp"
+                android:background="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimary"
+                android:foregroundGravity="center"
+                android:foregroundTint="@android:color/white"
+                android:indeterminate="true"
+                android:indeterminateTint="@android:color/white"
+                android:progress="20"
+                android:progressBackgroundTint="@android:color/white"
+                android:progressTint="@android:color/white"
+                android:secondaryProgressTint="@android:color/white"
+                android:visibility="visible" />
         </com.google.android.material.appbar.AppBarLayout>
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -95,13 +114,23 @@
                 android:layout_height="match_parent">
 
 
-                <WebView
-                    android:layout_margin="24dp"
-                    android:id="@+id/news"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="24dp"
 
-                    />
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/news"
+                    android:background="#cddc39"
+                    android:elevation="2dp"
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Map"
+                        android:layout_margin="24dp"/>
+                </androidx.cardview.widget.CardView>
 
 
 
@@ -116,7 +145,7 @@
                         android:layout_width="0dp"
                         android:layout_height="200dp"
                         android:layout_marginStart="24dp"
-                        android:layout_marginLeft="24dp"
+
                         android:layout_marginTop="24dp"
                         android:id="@+id/eat"
                         android:background="#cddc39"
@@ -154,7 +183,7 @@
                         android:layout_height="200dp"
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
-                        android:layout_below="@+id/gym"
+
                         android:background="#ffd600"
                         >
                         <TextView
@@ -167,6 +196,7 @@
 
             </RelativeLayout>
         </androidx.core.widget.NestedScrollView>
+
 
 
 
