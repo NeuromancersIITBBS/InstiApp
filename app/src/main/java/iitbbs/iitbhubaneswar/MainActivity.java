@@ -10,13 +10,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.support.design.internal.NavigationMenu;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,18 +41,18 @@ public class MainActivity extends AppCompatActivity
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
-        setContentView(iitbbs.iitbhubaneswar.R.layout.activity_main);
+        setContentView(R.layout.new_home);
         Toolbar toolbar = (Toolbar) findViewById(iitbbs.iitbhubaneswar.R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(iitbbs.iitbhubaneswar.R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, iitbbs.iitbhubaneswar.R.string.navigation_drawer_open, iitbbs.iitbhubaneswar.R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+//        DrawerLayout drawer = (DrawerLayout) findViewById(iitbbs.iitbhubaneswar.R.id.drawer_layout);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, iitbbs.iitbhubaneswar.R.string.navigation_drawer_open, iitbbs.iitbhubaneswar.R.string.navigation_drawer_close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(iitbbs.iitbhubaneswar.R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = (NavigationView) findViewById(iitbbs.iitbhubaneswar.R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         progressBar = (ProgressBar) findViewById(iitbbs.iitbhubaneswar.R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
@@ -61,17 +63,17 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         WebView webView = (WebView) this.findViewById( iitbbs.iitbhubaneswar.R.id.erp_webview );
-        DrawerLayout drawer = (DrawerLayout) findViewById(iitbbs.iitbhubaneswar.R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        }
+//        DrawerLayout drawer = (DrawerLayout) findViewById(iitbbs.iitbhubaneswar.R.id.drawer_layout);
+//        if (drawer.isDrawerOpen(GravityCompat.START)) {
+//            drawer.closeDrawer(GravityCompat.START);
+//        }
 
-        else if(findViewById(iitbbs.iitbhubaneswar.R.id.map_layout) != null)  {
+         if(findViewById(iitbbs.iitbhubaneswar.R.id.map_layout) != null)  {
             if(doublepress)
                 super.onBackPressed();
             else{
                 this.doublepress=true;
-                Snackbar snackbar = Snackbar.make( drawer,"Please press BACK again to exit", Snackbar.LENGTH_SHORT );
+                Snackbar snackbar = Snackbar.make(getCurrentFocus(),  "Please press BACK again to exit", Snackbar.LENGTH_SHORT );
                 snackbar.show();
                 View snackview = snackbar.getView();
                 TextView textView = snackview.findViewById(android.support.design.R.id.snackbar_text);
@@ -346,5 +348,9 @@ public class MainActivity extends AppCompatActivity
 
         fragmentTransaction.replace(iitbbs.iitbhubaneswar.R.id.content_frame, navFragment);
         fragmentTransaction.commit();
+    }
+    void openMap(View v){
+        setTitle("Campus Map");
+        setNavFragment(iitbbs.iitbhubaneswar.R.layout.map);
     }
 }
